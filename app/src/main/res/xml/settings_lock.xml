@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<CheckBoxPreference
+		android:key="settings_lock_open"
+		android:title="@string/settings_lock_open"
+		android:checked="true" />
+	
+	<CheckBoxPreference
+		android:key="settings_lock_pass_open"
+		android:title="@string/settings_lock_pass_open"
+		android:checked="true" />
+	
+	<Preference
+        android:title="@string/settings_lock_pass">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="cc.flydev.face"
+            android:targetClass="cc.flydev.launcher.settings.LockPassSettingActivity"/>
+    </Preference>
+	
+	<Preference
+        android:title="@string/settings_lock_wallpaper">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="cc.flydev.face"
+            android:targetClass="cc.flydev.launcher.settings.SetLockWallpaperActivity"/>
+    </Preference>
+	
+	<Preference
+        android:key="settings_lock_hint"
+        android:title="@string/lock_hint_settings_title"/>
+	
+	<Preference
+		android:title="@string/noticetitle"
+		android:summary="@string/notice" />
+
+</PreferenceScreen>
+
+

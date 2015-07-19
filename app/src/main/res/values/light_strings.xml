@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Settings -->
+    <string name="settings_about">About</string>
+    <string name="settings_restart">Restart Launcher</string>
+    <string name="settings_interface">Interface</string>
+    <string name="settings_effects">Effects</string>
+    
+    <!-- About -->
+    <string name="about_version_title">LiveFACE Version</string>
+    <string name="about_developers_title">DEVer</string>
+    <string name="about_developers_summary">Build By Jeff/Imooncat/Ma/Little Pig/Mr.Bo</string>
+    <string name="about_license_title">Open Source License</string>
+    <string name="about_license_summary">Apache License 2.0</string>
+	<string name="about_bbs_title">BBS</string>
+	<string name="about_bbs_summary">http://bbs.flydev.cc</string>
+    
+    <!-- Interface -->
+    <string name="interface_icon">Icon</string>
+    <string name="interface_iconpack_current_title">Current Icon Pack</string>
+    <string name="interface_iconpack_current_summary_default">Default</string>
+    <string name="interface_iconpack_chooser_title">Choose Icon Pack</string>
+    <string name="interface_global">Global</string>
+    <string name="interface_global_font_size_title">Font Size</string>
+    <string name="interface_homescreen_drawer">Homescreen/Drawer</string>
+    <string name="interface_homescreen_drawer_icon_size_title">Icon Size</string>
+    <string name="interface_homescreen_drawer_enable_drawer">Enable Drawer</string>
+    <string name="interface_hotseat">Hotseat</string>
+    <string name="interface_hotseat_icon_size_title">Icon Size</string>
+    
+    <!-- Effects -->
+    <string name="effects_global">Global</string>
+    <string name="effects_global_auto_rotate_title">Auto Rotate</string>
+    
+    <!-- Messages -->
+    <string name="message_needs_restart">Needs restarting Launcher to take effect</string>
+    
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="8dp">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="@string/dialog_forget_message"
+		android:layout_width="wrap_content"/>
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:inputType="textPassword"
+		android:ems="10"
+		android:layout_width="match_parent"
+		android:layout_marginTop="8dp"
+		android:id="@+id/dialog_forget_complex"/>
+
+</LinearLayout>
+

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#00000000"
+	android:id="@+id/viewlockscreen">
+
+	<RelativeLayout
+		android:id="@+id/screen_main_layput"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:background="#ccc"
+		android:layout_alignParentBottom="true"
+>
+
+		<ImageView
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:src="@drawable/wallpaper_1"
+			android:scaleType="centerCrop"
+			android:id="@+id/screen_wallpaper"/>
+
+	</RelativeLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:layout_alignParentBottom="true">
+
+		<RelativeLayout
+			android:id="@+id/screen_bottom_layout"
+			android:layout_width="match_parent"
+			android:layout_height="140dp"
+			android:background="@drawable/lock_bar_bkg" >
+
+		    <!-- android:layout_height="140dp"-->
+		    
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:orientation="vertical"
+				android:layout_alignParentRight="true"
+				android:id="@+id/screen_music_layout"
+				android:layout_marginBottom="50dp"
+				android:layout_alignParentBottom="true"
+				android:layout_marginRight="2dp">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="音乐正在播放"
+						android:layout_width="wrap_content"
+						android:textColor="#FFFFFF"
+						android:gravity="center"
+						android:id="@+id/screen_music_name"
+						android:layout_gravity="center_vertical"
+						android:maxLength="8"/>
+
+					<ImageButton
+						android:layout_height="wrap_content"
+						style="?android:attr/buttonBarButtonStyle"
+						android:layout_width="wrap_content"
+						android:src="@drawable/icon_skip_left"
+						android:id="@+id/screen_skip_left"
+						android:background="@android:color/transparent"
+						android:visibility="gone"/>
+
+					<ImageButton
+						android:layout_height="30dp"
+						style="?android:attr/buttonBarButtonStyle"
+						android:layout_width="30dp"
+						android:src="@drawable/icon_pause"
+						android:id="@+id/screen_pause"
+						android:layout_marginLeft="1dp"
+						android:background="@android:color/transparent"
+						android:layout_gravity="center_vertical"
+						android:scaleType="centerInside"/>
+
+					<ImageButton
+						android:layout_height="30dp"
+						style="?android:attr/buttonBarButtonStyle"
+						android:layout_width="30dp"
+						android:src="@drawable/icon_skip_right"
+						android:id="@+id/screen_skip_right"
+						android:layout_marginLeft="1dp"
+						android:background="@android:color/transparent"
+						android:scaleType="centerInside"
+						android:layout_gravity="center_vertical"/>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/screen_hours"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#fff"
+				android:textSize="32sp"
+				android:layout_marginLeft="14dp"
+				android:layout_alignParentBottom="true"
+				android:layout_marginBottom="18dp"/>
+
+			<LinearLayout
+				android:id="@+id/screen_yers_layout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				android:layout_toRightOf="@+id/screen_hours"
+				android:orientation="vertical"
+				android:layout_alignParentBottom="true"
+				android:layout_marginBottom="16dp">
+
+				<TextView
+					android:id="@+id/screen_week"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#fff"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/screen_years"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:textColor="#fff"
+					android:textSize="14sp"/>
+
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/screen_unlock_hint"
+				android:layout_width="120dp"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="我是自定义文字"
+				android:textColor="#ffffff"
+				android:textSize="12sp"
+				android:visibility="gone"
+				android:gravity="center"
+				android:layout_marginRight="14dp"
+				android:layout_alignParentBottom="true"
+				android:layout_marginBottom="12dp"
+				android:lines="2"/>
+
+			<RelativeLayout
+				android:id="@+id/screen_notie_layout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="23dp"
+				android:layout_alignParentBottom="true"
+				android:layout_marginBottom="8dp">
+
+				<ImageView
+					android:id="@+id/screen_icon_cell"
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="99dp"
+					android:src="@drawable/icon_call"/>
+
+				<TextView
+					android:id="@+id/screen_cell_num"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10dp"
+					android:layout_toRightOf="@+id/screen_icon_cell"
+					android:text="2"
+					android:textColor="#FFF"
+					android:textSize="20sp"/>
+
+				<ImageView
+					android:id="@+id/screen_icon_sms"
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10dp"
+					android:layout_toRightOf="@+id/screen_cell_num"
+					android:src="@drawable/icon_sms"/>
+
+				<TextView
+					android:id="@+id/screen_sms_num"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10dp"
+					android:layout_toRightOf="@+id/screen_icon_sms"
+					android:text="3"
+					android:textColor="#FFF"
+					android:textSize="20sp"/>
+
+			</RelativeLayout>
+
+			<ImageView
+				android:layout_height="42dp"
+				android:layout_width="42dp"
+				android:src="@drawable/lock_nomusic"
+				android:layout_alignParentRight="true"
+				android:id="@+id/screen_nomusic"
+				android:layout_marginBottom="50dp"
+				android:layout_alignParentBottom="true"
+				android:layout_marginRight="14dp"/>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:id="@+id/lock_screen_pass"
+			android:background="@drawable/lock_password_bg">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginBottom="12dp"
+				android:textColor="#FFFFFF"
+				android:id="@+id/lock_pass_num"/>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center">
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_1"/>
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:layout_marginRight="24dp"
+					android:layout_marginLeft="24dp"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_2"/>
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_3"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp">
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_4"/>
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:layout_marginRight="24dp"
+					android:layout_marginLeft="24dp"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_5"/>
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_6"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:layout_marginBottom="16dp">
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_7"/>
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:layout_marginRight="24dp"
+					android:layout_marginLeft="24dp"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_8"/>
+
+				<ImageView
+					android:layout_height="48dp"
+					android:layout_width="48dp"
+					android:src="@drawable/lock_pass_btn"
+					android:padding="8dp"
+					android:id="@+id/lock_pass_9"/>
+
+			</LinearLayout>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="忘记密码"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center"
+				android:textColor="#FFFFFF"
+				android:layout_marginBottom="10dp"
+				android:id="@+id/lock_forget"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

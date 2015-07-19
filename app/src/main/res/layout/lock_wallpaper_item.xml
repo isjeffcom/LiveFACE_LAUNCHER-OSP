@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<ImageView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:src="@android:drawable/ic_menu_add"
+		android:layout_margin="4dp"
+		android:id="@+id/lock_wallpaper_item_image"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="文本"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:id="@+id/lock_wallpaper_item_text"/>
+
+</LinearLayout>
+

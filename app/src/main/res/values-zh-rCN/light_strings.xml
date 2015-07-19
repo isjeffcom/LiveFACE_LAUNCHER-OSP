@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Settings -->
+    <string name="settings_about">关于我们</string>
+    <string name="settings_restart">重启桌面</string>
+    <string name="settings_interface">界面设置</string>
+    <string name="settings_effects">效果</string>
+    
+    <!-- About -->
+    <string name="about_version_title">LiveFACE版本号</string>
+    <string name="about_developers_title">开发团队</string>
+    <string name="about_developers_summary">动次科技--LiveFACE技术开发组 bbs.flydev.cc</string>
+    <string name="about_license_title">开发者</string>
+    <string name="about_license_summary">吴健锋/林紫涵/小玛/小猪崽/bo少</string>
+	<string name="about_bbs_title">官方社区</string>
+	<string name="about_bbs_summary">http://bbs.flydev.cc</string>
+    
+    <!-- Interface -->
+    <string name="interface_icon">主题</string>
+    <string name="interface_iconpack_current_title">当前主题包</string>
+    <string name="interface_iconpack_current_summary_default">默认</string>
+    <string name="interface_iconpack_chooser_title">选择主题包</string>
+    <string name="interface_global">全局</string>
+    <string name="interface_global_font_size_title">字体大小</string>
+    <string name="interface_homescreen_drawer">主屏幕/抽屉</string>
+    <string name="interface_homescreen_drawer_icon_size_title">桌面图标大小</string>
+    <string name="interface_homescreen_drawer_enable_drawer">启用程序抽屉(原生)</string>
+    <string name="interface_hotseat">托盘</string>
+    <string name="interface_hotseat_icon_size_title">托盘图标大小</string>
+    
+    <!-- Effects -->
+    <string name="effects_global">全局</string>
+    <string name="effects_global_auto_rotate_title">开启横向布局</string>
+    
+    <!-- Messages -->
+    <string name="message_needs_restart">需要重启LiveFACE桌面使设置生效</string>
+    
+</resources>

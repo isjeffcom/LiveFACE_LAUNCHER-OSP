@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <Preference
+        android:title="@string/settings_interface">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="cc.flydev.face"
+                android:targetClass="cc.flydev.launcher.settings.InterfaceActivity"/>
+    </Preference>
+    
+	
+	<Preference
+        android:title="@string/lock_settings_title">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="cc.flydev.face"
+            android:targetClass="cc.flydev.launcher.settings.LockSettingActivity"/>
+    </Preference>
+	
+	<Preference
+        android:title="@string/settings_testing_title">
+        <intent android:action="android.intent.action.MAIN"
+			android:targetPackage="cc.flydev.face"
+			android:targetClass="cc.flydev.launcher.settings.TestingActivity"/>
+    </Preference>
+    
+    <Preference
+        android:title="@string/settings_about">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="cc.flydev.face"
+                android:targetClass="cc.flydev.launcher.settings.AboutActivity"/>
+    </Preference>
+    
+    <Preference
+        android:key="settings_restart"
+        android:title="@string/settings_restart"/>
+
+</PreferenceScreen>
+
