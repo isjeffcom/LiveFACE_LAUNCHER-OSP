@@ -48,3 +48,6 @@ Any reproduction, dissemination, transmission, forwarding, and publishing or dis
 ---------------
 
 Google Play：https://play.google.com/store/apps/details?id=cc.flydev.face
+
+//OSC git For Chinese Dever:
+http://git.oschina.net/liveface/LiveFACE_LAUNCHER-OSP
