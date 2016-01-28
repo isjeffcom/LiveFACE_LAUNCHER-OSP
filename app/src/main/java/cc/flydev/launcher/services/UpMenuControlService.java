@@ -9,6 +9,7 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.PixelFormat;
@@ -24,6 +25,8 @@ import android.provider.Settings.SettingNotFoundException;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,6 +36,8 @@ import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -76,6 +81,10 @@ public class UpMenuControlService extends Service {
 	private WifiManager wifiManager;
 	private ContentResolver cr;
 	private Camera camera;
+
+	/*返回键和主页键是否存在 2016.1.27 WU JIANFENG*/
+	private boolean backKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_BACK);
+	private boolean homeKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_HOME);
 	
 
 	@Override
@@ -117,7 +126,6 @@ public class UpMenuControlService extends Service {
 		//mBack.setBackgroundColor(0x77000000);
 		mBack.setOnTouchListener(mBackListener);
 		mWM.addView(mBack, mBkg);
-		
 		mWM.addView(mView, mTouch);
 
 		DisplayMetrics dm = new DisplayMetrics();
@@ -127,21 +135,29 @@ public class UpMenuControlService extends Service {
 		ViewTreeObserver vto = mView.getViewTreeObserver();
 		vto.addOnPreDrawListener(new OnPreDrawListener() {
 
-				@Override
-				public boolean onPreDraw() {
-					if(!measured) {
-						maxHeight = mView.getHeight();
-						if(maxHeight != 0) {
+			@Override
+			public boolean onPreDraw() {
+				if (!measured) {
+					maxHeight = mView.getHeight();
+					if (maxHeight != 0) {
+						/*检测是否有导航栏 2016.1.27 WU JIANFENG*/
+						if (backKey && homeKey) {
 							measured = true;
-							debug("" + maxHeight);
 							mTouch.y = downY = 18 - maxHeight;
+							updatePos();
+							/*在没有导航栏的时候设置透明度为0 2016.1.27 WU JIANFENG*/
+						} else {
+							measured = true;
+							mTouch.y = downY= 66 - maxHeight;
+							mView.setAlpha(0f);
 							updatePos();
 						}
 					}
-					return true;
 				}
+				return true;
+			}
 
-			});
+		});
 		
 		
 	}
@@ -202,24 +218,24 @@ public class UpMenuControlService extends Service {
 
 		brightSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
-				@Override
-				public void onStopTrackingTouch(SeekBar seekBar) {
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+			}
+
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+										  boolean fromUser) {
+				if (brightmode == 0) {
+					seekBar.setProgress(progress);
+					Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, progress);
 				}
 
-				@Override
-				public void onStartTrackingTouch(SeekBar seekBar) {
-				}
-
-				@Override
-				public void onProgressChanged(SeekBar seekBar, int progress,
-											  boolean fromUser) {
-					if(brightmode == 0) {
-						seekBar.setProgress(progress);
-						Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, progress);
-					}	
-
-				}
-			});
+			}
+		});
 	}
 	
 
@@ -304,17 +320,19 @@ public class UpMenuControlService extends Service {
 	private void updatePos() {
 		mWM.updateViewLayout(mView, mTouch);
 	}
+
 	
 	private void moveUp() {
 		int time = upY - mTouch.y;
 		ValueAnimator va = ValueAnimator.ofInt(mTouch.y, upY);
 		va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					mTouch.y = (Integer) animation.getAnimatedValue();
-					updatePos();
-					mBack.setAlpha(getAlphaValue(mTouch.y));
+					    mTouch.y = (Integer) animation.getAnimatedValue();
+					    updatePos();
+					    mBack.setAlpha(getAlphaValue(mTouch.y));
+					    /*滑到顶的时候设置透明度为1 2016.1.27 WU JIANFENG*/
+					    mView.setAlpha(1.0f);
 				}
 
 			});
@@ -333,6 +351,12 @@ public class UpMenuControlService extends Service {
 					mTouch.y = (Integer) animation.getAnimatedValue();
 					updatePos();
 					mBack.setAlpha(getAlphaValue(mTouch.y));
+					/*滑到底的时候设置透明度为0 2016.1.27 WU JIANFENG*/
+					if(homeKey && backKey){
+						return;
+					}else{
+					    mView.setAlpha(0f);
+				    }
 				}
 
 			});
