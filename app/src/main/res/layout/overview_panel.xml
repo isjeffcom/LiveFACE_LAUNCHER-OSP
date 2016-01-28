@@ -30,6 +30,7 @@
         android:drawableTop="@drawable/wallpaper_button"
         android:gravity="center_horizontal"
         android:fontFamily="sans-serif-condensed"
+        android:textColor="#f0f0f0"
         android:textAllCaps="true"
         android:textSize="12sp" />
     <Space
@@ -39,6 +40,7 @@
         android:id="@+id/widget_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#f0f0f0"
         android:text="@string/widget_button_text"
         android:drawablePadding="4dp"
         android:gravity="center_horizontal"
@@ -55,6 +57,7 @@
         android:layout_height="wrap_content"
         android:text="@string/settings_button_text"
         android:drawablePadding="4dp"
+        android:textColor="#f0f0f0"
         android:gravity="center_horizontal"
         android:drawableTop="@drawable/setting_button"
         android:fontFamily="sans-serif-condensed"

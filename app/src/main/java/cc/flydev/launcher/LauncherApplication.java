@@ -28,7 +28,6 @@ import android.os.Build;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.tencent.bugly.crashreport.CrashReport;
 
 
 public class LauncherApplication extends Application {
@@ -42,13 +41,7 @@ public class LauncherApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
-        Context appContext =  this.getApplicationContext();         
-
-        String appId = "900005055";   //上Bugly(bugly.qq.com)注册产品获取的AppId
-        
-        boolean isDebug = true ;  //true代表App处于调试阶段，false代表App发布阶段
-//
-        CrashReport. initCrashReport(appContext, appId, isDebug);  //初始化SDK
+        Context appContext =  this.getApplicationContext();
         LauncherAppState.setApplicationContext(this);
         LauncherAppState.getInstance();
     }

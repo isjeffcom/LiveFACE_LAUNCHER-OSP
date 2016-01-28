@@ -17,7 +17,7 @@
 <!-- Full screen view projects under the status bar and contains the background -->
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto/cc.flydev.launcher"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
 
     android:id="@+id/launcher"
     android:layout_width="match_parent"
