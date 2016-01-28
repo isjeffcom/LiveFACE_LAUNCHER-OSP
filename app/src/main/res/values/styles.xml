@@ -32,12 +32,14 @@
         <item name="android:background">#88000000</item>
     </style>
 
-    <!--<style name="Theme" parent="@android:style/Theme.Holo.Wallpaper.NoTitleBar">-->
-    <style name="Theme" parent="@android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar">
-    <!--<style name="Theme" parent="Theme.AppCompat.NoActionBar">-->
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+    <style name="BaseWallpaperTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
+
+    <style name="AppTheme" parent="@style/BaseWallpaperTheme"></style>
 
     <style name="ClingButton">
         <item name="android:layout_width">wrap_content</item>

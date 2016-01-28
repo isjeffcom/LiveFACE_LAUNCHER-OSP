@@ -43,6 +43,7 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
@@ -67,12 +68,14 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -81,11 +84,13 @@ import android.os.StrictMode;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.speech.RecognizerIntent;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.method.TextKeyListener;
 import android.util.DisplayMetrics;
+import android.util.FloatMath;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
@@ -128,7 +133,9 @@ import cc.flydev.launcher.settings.SettingsProvider;
 /**
  * Default launcher application.
  */
-public class Launcher extends Activity implements OnClickListener, OnLongClickListener, LauncherModel.Callbacks, View.OnTouchListener {
+public class Launcher extends Activity
+        implements OnClickListener, OnLongClickListener, LauncherModel.Callbacks,
+        View.OnTouchListener {
     static final String TAG = "Launcher";
     static final boolean LOGD = false;
     private WebView wb1;
@@ -473,11 +480,11 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
         checkForLocaleChange();
         setContentView(R.layout.launcher);
-        Window window = getWindow();
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(this);
-        if (!viewConfiguration.hasPermanentMenuKey()) {
-            window.addFlags(0x40000000);
-        }
+//        Window window = getWindow();
+//        ViewConfiguration viewConfiguration = ViewConfiguration.get(this);
+//        if (!viewConfiguration.hasPermanentMenuKey()) {
+//            window.addFlags(0x40000000);
+//        }
         setupViews();
         grid.layout(this);
 
@@ -1106,6 +1113,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
         return Boolean.TRUE;
     }
 
+
     // We can't hide the IME if it was forced open. So don't bother
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -1571,8 +1579,29 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
         filter.addAction(Intent.ACTION_USER_PRESENT);
         registerReceiver(mReceiver, filter);
         FirstFrameAnimatorHelper.initializeDrawListener(getWindow().getDecorView());
+        setupTransparentSystemBarsForLollipop();
         mAttached = true;
         mVisible = true;
+    }
+
+    /**
+     * Sets up transparent navigation and status bars in Lollipop.
+     * This method is a no-op for other platform versions.
+     */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void setupTransparentSystemBarsForLollipop() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.getAttributes().systemUiVisibility |=
+                    (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
     }
 
     @Override
@@ -3597,12 +3626,12 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
     /**
      * If the activity is currently paused, signal that we need to run the
      * passed Runnable in onResume.
-     * <p/>
+     * <p>
      * This needs to be called from incoming places where resources might have
      * been loaded while we are paused. That is becaues the Configuration might
      * be wrong when we're not running, and if it comes back to what it was when
      * we were paused, we are not restarted.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      *
      * @return true if we are currently paused. The caller might be able to skip
@@ -3633,12 +3662,12 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
     /**
      * If the activity is currently paused, signal that we need to re-run the
      * loader in onResume.
-     * <p/>
+     * <p>
      * This needs to be called from incoming places where resources might have
      * been loaded while we are paused. That is becaues the Configuration might
      * be wrong when we're not running, and if it comes back to what it was when
      * we were paused, we are not restarted.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      *
      * @return true if we are currently paused. The caller might be able to skip
@@ -3667,7 +3696,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
     /**
      * Refreshes the shortcuts shown on the workspace.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void startBinding() {
@@ -3772,7 +3801,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
     /**
      * Bind the items start-end from the list.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void bindItems(final ArrayList<ItemInfo> shortcuts, final int start, final int end, final boolean forceAnimateIcons) {
@@ -3906,7 +3935,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
     /**
      * Add the views for a widget to the workspace.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void bindAppWidget(final LauncherAppWidgetInfo item) {
@@ -3952,7 +3981,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
     /**
      * Callback saying that there aren't any more items to bind.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void finishBindingItems(final boolean upgradePath) {
@@ -4034,7 +4063,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
     /**
      * Add the icons for all apps.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void bindAllApplications(final ArrayList<AppInfo> apps) {
@@ -4054,7 +4083,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
 
     /**
      * A package was updated.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void bindAppsUpdated(final ArrayList<AppInfo> apps) {
@@ -4082,7 +4111,7 @@ public class Launcher extends Activity implements OnClickListener, OnLongClickLi
      * can be called when a package is updated as well. In that scenario, we
      * only remove specific components from the workspace, where as
      * package-removal should clear all items by package name.
-     * <p/>
+     * <p>
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void bindComponentsRemoved(final ArrayList<String> packageNames, final ArrayList<AppInfo> appInfos, final boolean packageRemoved) {

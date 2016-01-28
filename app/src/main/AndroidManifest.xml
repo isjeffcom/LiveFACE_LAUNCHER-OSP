@@ -94,6 +94,7 @@
         android:icon="@mipmap/ic_launcher_home"
         android:label="@string/application_name"
         android:largeHeap="@bool/config_largeHeap"
+        android:theme="@style/AppTheme"
         android:supportsRtl="true">
 
         <activity
@@ -115,7 +116,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:stateNotNeeded="true"
-            android:theme="@style/Theme"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
