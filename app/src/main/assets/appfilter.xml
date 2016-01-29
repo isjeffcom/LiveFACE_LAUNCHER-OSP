@@ -14,7 +14,7 @@
     <!--a-->
     
     <item component="ComponentInfo{com.qiyi.video/com.qiyi.video.WelcomeActivity}" drawable="app_aiqiyi"/>
-     
+
     <item component="ComponentInfo{cn.amazon.mShop.android/com.amazon.mShop.splashscreen.StartupActivity}" drawable="app_amazon"/>    
     
     <item component="ComponentInfo{com.adobe.air/com.adobe.air.AdobeAIRMainActivity}" drawable="app_aair"/>

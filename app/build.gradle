@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "cc.flydev.face"
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 13
         versionName "BETA-8.6"
     }
@@ -21,9 +21,11 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
-    dataBinding {
-        enabled = true
-    }
+//    dataBinding {
+//        enabled = true
+//    }  dataBinding {
+//        enabled = true
+//    }
     dexOptions {
         incremental true
     }
@@ -35,10 +37,10 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:+'
-    compile 'com.android.support:palette-v7:+'
-    compile 'com.android.support:recyclerview-v7:+'
-    compile 'com.android.support:design:+'
-
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:palette-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
 }
 

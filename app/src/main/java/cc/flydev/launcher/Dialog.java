@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
@@ -12,9 +13,11 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnKeyListener;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
@@ -31,192 +34,183 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
 import cc.flydev.face.R;
 
 public class Dialog extends Activity {
-	private Button button1;
-	private ImageView img1;
-	private static final int LIGHT_NORMAL = 64;  
-    private static final int LIGHT_50_PERCENT = 127;  
-    private static final int LIGHT_75_PERCENT = 191;  
-    private static final int LIGHT_100_PERCENT = 255;  
-    private static final int LIGHT_AUTO = 0;  
-    private static final int LIGHT_ERR = -1;  
-    private PowerManager mPowerManager;  
-	private ImageButton bt1;
-	private ImageButton bt2;
-	private ImageButton bt3;
-	private ImageButton bt4;
-	private ImageButton bt5;
-	private ImageButton bt6;
-	private WifiManager mWm;
+    private Button button1;
+    private ImageView img1;
+    private static final int LIGHT_NORMAL = 64;
+    private static final int LIGHT_50_PERCENT = 127;
+    private static final int LIGHT_75_PERCENT = 191;
+    private static final int LIGHT_100_PERCENT = 255;
+    private static final int LIGHT_AUTO = 0;
+    private static final int LIGHT_ERR = -1;
+    private PowerManager mPowerManager;
+    private ImageButton bt1;
+    private ImageButton bt2;
+    private ImageButton bt3;
+    private ImageButton bt4;
+    private ImageButton bt5;
+    private ImageButton bt6;
+    private WifiManager mWm;
 
-	private Activity context;
+    private Activity context;
 
-	private AudioManager mAudioManager;
-	private ImageView brightnessIv;
-	 private ConnectivityManager mConnectivityManager; 
-	  public static final String RINGER_MODE_CHANGED = "android.media.RINGER_MODE_CHANGED"; 
-	  private static final String NETWORK_CHANGE = "android.intent.action.ANY_DATA_STATE";
-	  private IntentFilter mIntentFilter;
-
-	
+    private AudioManager mAudioManager;
+    private ImageView brightnessIv;
+    private ConnectivityManager mConnectivityManager;
+    public static final String RINGER_MODE_CHANGED = "android.media.RINGER_MODE_CHANGED";
+    private static final String NETWORK_CHANGE = "android.intent.action.ANY_DATA_STATE";
+    private IntentFilter mIntentFilter;
 
 
-	@Override
-	
-	
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.home_settings);
+    @Override
+
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		setContentView(R.layout.home_settings);
 //		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mWm = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-		mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		 mPowerManager = (PowerManager)getSystemService(Context.POWER_SERVICE);
-		 mConnectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		 mIntentFilter = new IntentFilter();  
-		 mIntentFilter.addAction("android.intent.action.ANY_DATA_STATE"); 
-	        //��ӹ㲥���������˵Ĺ㲥  
-	        mIntentFilter.addAction("android.media.RINGER_MODE_CHANGED");
-		LayoutInflater inflater = LayoutInflater.from(this);
-		 final RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.background, null);
-				
-				final AlertDialog dialog = new AlertDialog.Builder(Dialog.this).create();
-				dialog.setCancelable(false);
-				dialog.show();
-				WindowManager.LayoutParams lp=dialog.getWindow().getAttributes();
-				lp.alpha=0.9f;
-				dialog.getWindow().setAttributes(lp);
-				dialog.getWindow().setContentView(layout);	
-				Window window = dialog.getWindow();  
-				//设置显示动画  
-				window.setWindowAnimations(R.style.main_menu_animstyle);  
-				 dialog.setOnKeyListener(new OnKeyListener() {
-					
-					@Override//������ؼ��˳�/
-					public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-						if (keyCode == KeyEvent.KEYCODE_BACK)
-                        {
-                            dialog.dismiss();
-                            Dialog.this.finish();
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        mConnectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        mIntentFilter = new IntentFilter();
+        mIntentFilter.addAction("android.intent.action.ANY_DATA_STATE");
+        //��ӹ㲥���������˵Ĺ㲥
+        mIntentFilter.addAction("android.media.RINGER_MODE_CHANGED");
+        LayoutInflater inflater = LayoutInflater.from(this);
+        final RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.background, null);
 
-                       
-                            return true;
-                        }
-                        else
-                        {
-                        	
-                        	return false;
-                        }
-						
-					}
-				});
-				  ImageButton bt1=(ImageButton)layout.findViewById(R.id.dialog_wifi);
+        final AlertDialog dialog = new AlertDialog.Builder(Dialog.this).create();
+//        dialog.setCancelable(false);
+        dialog.show();
+        WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
+        lp.alpha = 0.9f;
+        dialog.getWindow().setAttributes(lp);
+        dialog.getWindow().setContentView(layout);
+        Window window = dialog.getWindow();
+        //设置显示动画
+        window.setWindowAnimations(R.style.main_menu_animstyle);
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Dialog.this.finish();
+            }
+        });
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                Dialog.this.finish();
+            }
+        });
+        ImageButton bt1 = (ImageButton) layout.findViewById(R.id.dialog_wifi);
 
-				 bt1.setOnClickListener(new OnClickListener() {
-					//wifi
-					@Override
-					public void onClick(View v) {
+        bt1.setOnClickListener(new OnClickListener() {
+            //wifi
+            @Override
+            public void onClick(View v) {
 
-						if (mWm.isWifiEnabled()) {
-						mWm.setWifiEnabled(false);
-						Toast.makeText(getBaseContext(), "wifi关闭", Toast.LENGTH_LONG).show();
-						
-						}
-						else {
-						mWm.setWifiEnabled(true);
-						Toast.makeText(getBaseContext(), "wifi打开", Toast.LENGTH_LONG).show();
-						
-						}
-						
-					}
-				});
+                if (mWm.isWifiEnabled()) {
+                    mWm.setWifiEnabled(false);
+                    Toast.makeText(getBaseContext(), "wifi关闭", Toast.LENGTH_LONG).show();
 
-				 bt1.setOnLongClickListener(new OnLongClickListener() {
-				
-					@Override
-					public boolean onLongClick(View v) {
-						   Intent intent =  new Intent(Settings.ACTION_WIFI_SETTINGS);  
-			                  startActivity(intent);
-						return false;
-					}
-				});
-				 
-				 ImageButton bt2=(ImageButton)layout.findViewById(R.id.dialog_more);
-				bt2.setOnClickListener(new OnClickListener() {
-					
+                } else {
+                    mWm.setWifiEnabled(true);
+                    Toast.makeText(getBaseContext(), "wifi打开", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
+
+        bt1.setOnLongClickListener(new OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                startActivity(intent);
+                dialog.dismiss();
+                return false;
+            }
+        });
+
+        ImageButton bt2 = (ImageButton) layout.findViewById(R.id.dialog_more);
+        bt2.setOnClickListener(new OnClickListener() {
 
 
-					@SuppressWarnings("deprecation")
-					@Override
-					public void onClick(View v) {
-						Intent intent =  new Intent(Settings.ACTION_SETTINGS);  
-		                startActivity(intent);
-						
-					}
-				});
-				ImageButton bt3=(ImageButton)layout.findViewById(R.id.homesetting);
-				bt3.setOnClickListener(new OnClickListener() {
-					
-					
-					@Override
-					public void onClick(View v) {
-						
-						Intent intent = new Intent();
+            @SuppressWarnings("deprecation")
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Settings.ACTION_SETTINGS);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+        ImageButton bt3 = (ImageButton) layout.findViewById(R.id.homesetting);
+        bt3.setOnClickListener(new OnClickListener() {
 
-						intent.setClassName("cc.flydev.face","cc.flydev.launcher.settings.SettingsActivity");
-						startActivity(intent);
-						
-					}
-				});
-				ImageButton bt4=(ImageButton)layout.findViewById(R.id.dialog_sound);
-				bt4.setOnLongClickListener(new OnLongClickListener() {
-					
-					@Override
-					public boolean onLongClick(View v) {
-						 Intent intent =  new Intent(Settings.ACTION_SOUND_SETTINGS);  
-		                 startActivity(intent);
-						return false;
-					}
-				});
-				
-				 bt4.setOnClickListener(new OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-				
-						  setSilentMode();
-						
-					}
-				});
-				 
-				final ImageButton bt5=(ImageButton)layout.findViewById(R.id.dialog_light);
-				 bt5.setOnLongClickListener(new OnLongClickListener() {
-					
-					@Override
-					public boolean onLongClick(View v) {
-						Intent intent =  new Intent(Settings.ACTION_DISPLAY_SETTINGS);  
-			            startActivity(intent);
-						return false;
-					}
-				});
-				 bt5.setOnClickListener(new OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-						
-						 setBrightStatus();  
-					}
-				});
-				 ImageButton bt6=(ImageButton)layout.findViewById(R.id.dialog_network);
-				 bt6.setOnClickListener(new OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-					 
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+
+                intent.setClassName("cc.flydev.face", "cc.flydev.launcher.settings.SettingsActivity");
+                startActivity(intent);
+
+                dialog.dismiss();
+            }
+        });
+        ImageButton bt4 = (ImageButton) layout.findViewById(R.id.dialog_sound);
+        bt4.setOnLongClickListener(new OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(Settings.ACTION_SOUND_SETTINGS);
+                startActivity(intent);
+                return false;
+            }
+        });
+
+        bt4.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                setSilentMode();
+
+            }
+        });
+
+        final ImageButton bt5 = (ImageButton) layout.findViewById(R.id.dialog_light);
+        bt5.setOnLongClickListener(new OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(Settings.ACTION_DISPLAY_SETTINGS);
+                startActivity(intent);
+                return false;
+            }
+        });
+        bt5.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                setBrightStatus();
+            }
+        });
+        ImageButton bt6 = (ImageButton) layout.findViewById(R.id.dialog_network);
+        bt6.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
 /*			           if (getMobileDataStatus())  
-				           {  
+                           {
 				               setMobileDataStatus(false);  
 				               Toast.makeText(getApplicationContext(), "�ƶ������ѹر�", Toast.LENGTH_SHORT).show();
 				                
@@ -228,17 +222,17 @@ public class Dialog extends Activity {
 				             
 						
 					}*/
-					    Intent intent =  new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS);  
-				           startActivity(intent);
-					}
-				});
+                Intent intent = new Intent(Settings.ACTION_DATA_ROAMING_SETTINGS);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
 
-			
 
-				 }
+    }
 //			�÷�����ʱ�޷�ʵ������ر�
-			  /*private boolean getMobileDataStatus()  
-			    {  
+              /*private boolean getMobileDataStatus()
+                {
 			        String methodName = "getMobileDataEnabled";  
 			        Class cmClass = mConnectivityManager.getClass();  
 			        Boolean isOpen = null;  
@@ -301,195 +295,192 @@ public class Dialog extends Activity {
 			        }  
 			    }  
 */
-			  
 
-			private int getBrightStatus()  
-			    {  
-			  
-			       
-			        int light = 0;  
-			        boolean auto = false;  
-			        ContentResolver cr = getContentResolver();  
-			          
-			        try   
-			        {  
-			            auto = Settings.System.getInt(cr,  
-			                    Settings.System.SCREEN_BRIGHTNESS_MODE) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;  
-			            if (!auto)   
-			            {  
-			                light = Settings.System.getInt(cr,
-			                        Settings.System.SCREEN_BRIGHTNESS, -1);  
-			                if (light > 0 && light <= LIGHT_NORMAL)   
-			                {  
-			                    return LIGHT_NORMAL;  
-			                }  
-			                else if (light > LIGHT_NORMAL && light <= LIGHT_50_PERCENT)   
-			                {  
-			                    return LIGHT_50_PERCENT;  
-			                }     
-			                else if (light > LIGHT_75_PERCENT && light <= LIGHT_100_PERCENT)  
-			                {  
-			                    return LIGHT_100_PERCENT;  
-			                }  
-			            }   
-			            else   
-			            {  
-			                return LIGHT_AUTO;  
-			            }  
-			        }   
-			        catch (SettingNotFoundException e1)   
-			        {  
-			            // TODO Auto-generated catch block  
-			            e1.printStackTrace();  
-			        }  
-			        return LIGHT_ERR;  
-			      
-			    }  
-			 private void setBrightStatus()  
-			    {  
-			        int light = 0;  
-			          
-			        switch (getBrightStatus())  
-			        {  
-			        case LIGHT_NORMAL:  
-			            light = LIGHT_50_PERCENT - 1;  
-			            Toast.makeText(getApplicationContext(), "50%", Toast.LENGTH_SHORT).show();
-			            break;  
-			        case LIGHT_50_PERCENT:  
-			            light = LIGHT_75_PERCENT - 1; 
-			            Toast.makeText(getApplicationContext(), "75%", Toast.LENGTH_SHORT).show();
 
-			            break;  
-			        case LIGHT_75_PERCENT:  
-			            light = LIGHT_100_PERCENT - 1;  
-			            Toast.makeText(getApplicationContext(), "100%", Toast.LENGTH_SHORT).show();
-			            break;  
-			        case LIGHT_100_PERCENT:  
-			            startAutoBrightness(getContentResolver());  
-			            Toast.makeText(getApplicationContext(), "自动亮度关闭", Toast.LENGTH_SHORT).show();
-			            break;  
-			        case LIGHT_AUTO:  
-			            light = LIGHT_NORMAL - 1;  
-			            stopAutoBrightness(getContentResolver()); 
-			            Toast.makeText(getApplicationContext(), "自动亮度开启", Toast.LENGTH_SHORT).show();;
-			            break;  
-			        case LIGHT_ERR:  
-			            light = LIGHT_NORMAL - 1;  
-			            break;  
-			          
-			        }  
-			          
-			        setLight(light);  
-			        setScreenLightValue(getContentResolver(), light);  
-			    }  
+    private int getBrightStatus() {
 
-			private void setLight(int light) {
-				 try  
-			        {  
-			            //�õ�PowerManager���Ӧ��Class����  
-			            Class<?> pmClass = Class.forName(mPowerManager.getClass().getName());  
-			            //�õ�PowerManager���еĳ�ԱmService��mServiceΪPowerManagerService���ͣ�  
-			            Field field = pmClass.getDeclaredField("mService");  
-			            field.setAccessible(true);  
-			            //ʵ����mService  
-			            Object iPM = field.get(mPowerManager);  
-			            //�õ�PowerManagerService��Ӧ��Class����  
-			            Class<?> iPMClass = Class.forName(iPM.getClass().getName());  
-			            /*�õ�PowerManagerService�ĺ���setBacklightBrightness��Ӧ��Method���� 
+
+        int light = 0;
+        boolean auto = false;
+        ContentResolver cr = getContentResolver();
+
+        try {
+            auto = Settings.System.getInt(cr,
+                    Settings.System.SCREEN_BRIGHTNESS_MODE) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
+            if (!auto) {
+                light = Settings.System.getInt(cr,
+                        Settings.System.SCREEN_BRIGHTNESS, -1);
+                if (light > 0 && light <= LIGHT_NORMAL) {
+                    return LIGHT_NORMAL;
+                } else if (light > LIGHT_NORMAL && light <= LIGHT_50_PERCENT) {
+                    return LIGHT_50_PERCENT;
+                } else if (light > LIGHT_75_PERCENT && light <= LIGHT_100_PERCENT) {
+                    return LIGHT_100_PERCENT;
+                }
+            } else {
+                return LIGHT_AUTO;
+            }
+        } catch (SettingNotFoundException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        return LIGHT_ERR;
+
+    }
+
+    private void setBrightStatus() {
+        int light = 0;
+
+        switch (getBrightStatus()) {
+            case LIGHT_NORMAL:
+                light = LIGHT_50_PERCENT - 1;
+                Toast.makeText(getApplicationContext(), "50%", Toast.LENGTH_SHORT).show();
+                break;
+            case LIGHT_50_PERCENT:
+                light = LIGHT_75_PERCENT - 1;
+                Toast.makeText(getApplicationContext(), "75%", Toast.LENGTH_SHORT).show();
+
+                break;
+            case LIGHT_75_PERCENT:
+                light = LIGHT_100_PERCENT - 1;
+                Toast.makeText(getApplicationContext(), "100%", Toast.LENGTH_SHORT).show();
+                break;
+            case LIGHT_100_PERCENT:
+                startAutoBrightness(getContentResolver());
+                Toast.makeText(getApplicationContext(), "自动亮度关闭", Toast.LENGTH_SHORT).show();
+                break;
+            case LIGHT_AUTO:
+                light = LIGHT_NORMAL - 1;
+                stopAutoBrightness(getContentResolver());
+                Toast.makeText(getApplicationContext(), "自动亮度开启", Toast.LENGTH_SHORT).show();
+                ;
+                break;
+            case LIGHT_ERR:
+                light = LIGHT_NORMAL - 1;
+                break;
+
+        }
+
+        setLight(light);
+        setScreenLightValue(getContentResolver(), light);
+    }
+
+    private void setLight(int light) {
+        try {
+            //�õ�PowerManager���Ӧ��Class����
+            Class<?> pmClass = Class.forName(mPowerManager.getClass().getName());
+            //�õ�PowerManager���еĳ�ԱmService��mServiceΪPowerManagerService���ͣ�
+            Field field = pmClass.getDeclaredField("mService");
+            field.setAccessible(true);
+            //ʵ����mService
+            Object iPM = field.get(mPowerManager);
+            //�õ�PowerManagerService��Ӧ��Class����
+            Class<?> iPMClass = Class.forName(iPM.getClass().getName());
+                        /*�õ�PowerManagerService�ĺ���setBacklightBrightness��Ӧ��Method����
 			             * PowerManager�ĺ���setBacklightBrightnessʵ����PowerManagerService�� 
-			             */  
-			            Method method = iPMClass.getDeclaredMethod("setBacklightBrightness", int.class);  
-			            method.setAccessible(true);  
-			            //����ʵ��PowerManagerService��setBacklightBrightness  
-			            method.invoke(iPM, light);  
-			        }  
-			        catch (ClassNotFoundException e)  
-			        {  
-			            // TODO Auto-generated catch block  
-			            e.printStackTrace();  
-			        }  
-			        catch (NoSuchFieldException e)  
-			        {  
-			            // TODO Auto-generated catch block  
-			            e.printStackTrace();  
-			        }  
-			        catch (IllegalArgumentException e)  
-			        {  
-			            // TODO Auto-generated catch block  
-			            e.printStackTrace();  
-			        }  
-			        catch (IllegalAccessException e)  
-			        {  
-			            // TODO Auto-generated catch block  
-			            e.printStackTrace();  
-			        }  
-			        catch (NoSuchMethodException e)  
-			        {  
-			            // TODO Auto-generated catch block  
-			            e.printStackTrace();  
-			        }  
-			        catch (InvocationTargetException e)  
-			        {  
-			            // TODO Auto-generated catch block  
-			            e.printStackTrace();  
-			        }  
-			  
-				
-			}
+			             */
+            Method method = iPMClass.getDeclaredMethod("setBacklightBrightness", int.class);
+            method.setAccessible(true);
+            //����ʵ��PowerManagerService��setBacklightBrightness
+            method.invoke(iPM, light);
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-			private void setScreenLightValue(ContentResolver resolver,
-					int value) {
-				 Settings.System.putInt(resolver, Settings.System.SCREEN_BRIGHTNESS,
-			                value);
-				
-			}
 
-			private void stopAutoBrightness(ContentResolver cr) {
-				Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE,  
-		                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);  
-				
-			}
+    }
 
-			private void startAutoBrightness(ContentResolver cr) {
-				Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE,  
-		                Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC); 
-				
-			}
+    private void setScreenLightValue(ContentResolver resolver,
+                                     int value) {
+        Settings.System.putInt(resolver, Settings.System.SCREEN_BRIGHTNESS,
+                value);
 
-			private int getSilentStatus() {
-				// TODO Auto-generated method stub
-				return mAudioManager.getRingerMode();
-			}
-		 private void setSilentMode()  
-			    {  
-			 switch (getSilentStatus())  
-		        {  
-		        case AudioManager.RINGER_MODE_SILENT:  
-		            mAudioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE); 
-		            Toast.makeText(getApplicationContext(), "振动", Toast.LENGTH_SHORT).show();
-		            break;  
-		        case AudioManager.RINGER_MODE_NORMAL:  
-		            mAudioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT); 
-		            Toast.makeText(getApplicationContext(), "静音", Toast.LENGTH_SHORT).show();
-		            break;        
-		        case AudioManager.RINGER_MODE_VIBRATE:  
-		            mAudioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);  
-		            Toast.makeText(getApplicationContext(), "正常", Toast.LENGTH_SHORT).show();
-		            break;  
-		        }  
-			      
+    }
 
-			    } 
-			 
+    private void stopAutoBrightness(ContentResolver cr) {
+        Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE,
+                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
 
-	@Override  
-    protected void onResume() {  
+    }
+
+    private void startAutoBrightness(ContentResolver cr) {
+        Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE,
+                Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+
+    }
+
+    private int getSilentStatus() {
+        // TODO Auto-generated method stub
+        return mAudioManager.getRingerMode();
+    }
+
+    private void setSilentMode() {
+        switch (getSilentStatus()) {
+            case AudioManager.RINGER_MODE_SILENT:
+                mAudioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+                Toast.makeText(getApplicationContext(), "振动", Toast.LENGTH_SHORT).show();
+                break;
+            case AudioManager.RINGER_MODE_NORMAL:
+                mAudioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+                Toast.makeText(getApplicationContext(), "静音", Toast.LENGTH_SHORT).show();
+                break;
+            case AudioManager.RINGER_MODE_VIBRATE:
+                mAudioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                Toast.makeText(getApplicationContext(), "正常", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+
+    }
+
+
+    @Override
+    protected void onResume() {
         // TODO Auto-generated method stub  
-        super.onResume();  
+        super.onResume();
         //ע��㲥������  
-        registerReceiver( null, mIntentFilter);  
-    }  
+        registerReceiver(null, mIntentFilter);
+    }
 
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setupTransparentSystemBarsForLollipop();
+    }
 
-	}
-
+    /**
+     * Sets up transparent navigation and status bars in Lollipop.
+     * This method is a no-op for other platform versions.
+     */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void setupTransparentSystemBarsForLollipop() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.getAttributes().systemUiVisibility |=
+                    (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
+    }
+}

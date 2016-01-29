@@ -49,7 +49,7 @@
         <!-- The number of vertical cells in the CellLayout -->
         <attr name="cellCountY" format="integer"  />
     </declare-styleable>
-    
+
     <!-- Hotseat specific attributes. These attributes are used to customize
          the hotseat in XML files. -->
     <declare-styleable name="Hotseat">
