@@ -18,12 +18,7 @@ android {
     }
     productFlavors {
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
 //    dataBinding {
-//        enabled = true
-//    }  dataBinding {
 //        enabled = true
 //    }
     dexOptions {
