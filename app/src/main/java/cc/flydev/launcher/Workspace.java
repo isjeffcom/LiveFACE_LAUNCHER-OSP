@@ -1091,14 +1091,14 @@ public class Workspace extends SmoothPagedView
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onShow();
                 mCustomContentShowTime = System.currentTimeMillis();
-                mLauncher.updateVoiceButtonProxyVisible(false);
+                //mLauncher.updateVoiceButtonProxyVisible(false);
             }
         } else if (hasCustomContent() && getNextPage() != 0 && mCustomContentShowing) {
             mCustomContentShowing = false;
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onHide();
                 mLauncher.resetQSBScroll();
-                mLauncher.updateVoiceButtonProxyVisible(false);
+                //mLauncher.updateVoiceButtonProxyVisible(false);
             }
         }
         if (getPageIndicator() != null) {
@@ -1934,7 +1934,7 @@ public class Workspace extends SmoothPagedView
         return offsetDelta;
     }
 
-    boolean shouldVoiceButtonProxyBeVisible() {
+    /*boolean shouldVoiceButtonProxyBeVisible() {
         if (isOnOrMovingToCustomContent()) {
             return false;
         }
@@ -1942,7 +1942,7 @@ public class Workspace extends SmoothPagedView
             return false;
         }
         return true;
-    }
+    }*/
 
     public void updateInteractionForState() {
         if (mState != State.NORMAL) {
@@ -2145,7 +2145,7 @@ public class Workspace extends SmoothPagedView
             setScaleY(mNewScale);
             setTranslationY(finalWorkspaceTranslationY);
         }
-        mLauncher.updateVoiceButtonProxyVisible(false);
+        //mLauncher.updateVoiceButtonProxyVisible(false);
 
         if (stateIsSpringLoaded) {
             // Right now we're covered by Apps Customize

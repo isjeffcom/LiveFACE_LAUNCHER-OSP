@@ -36,7 +36,7 @@ public class LockSettingActivity extends AbstractBarPreferenceActivity implement
 		mLockHint.setOnPreferenceClickListener(this);
 		
 		mLock = (CheckBoxPreference) findPreference(lock_open);
-		mLock.setChecked(SettingsProvider.getBoolean(this, lock_open, true));
+		mLock.setChecked(SettingsProvider.getBoolean(this, lock_open, false));
 		mLock.setOnPreferenceChangeListener(this);
 	}
     @Override

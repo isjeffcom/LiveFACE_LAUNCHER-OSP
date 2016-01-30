@@ -10,11 +10,11 @@
     <!-- About -->
     <string name="about_version_title">LiveFACE版本号</string>
     <string name="about_developers_title">开发团队</string>
-    <string name="about_developers_summary">动次科技--LiveFACE技术开发组 bbs.flydev.cc</string>
-    <string name="about_license_title">开发者</string>
-    <string name="about_license_summary">吴健锋/林紫涵/小玛/小猪崽/bo少</string>
-	<string name="about_bbs_title">官方社区</string>
-	<string name="about_bbs_summary">http://bbs.flydev.cc</string>
+    <string name="about_developers_summary">LiveFACE_APP</string>
+    <string name="about_license_title">开发人员</string>
+    <string name="about_license_summary">吴健锋/林紫涵/小玛/小猪崽/bo少/杨振寰/小笨猫</string>
+	<string name="about_bbs_title">官方网站</string>
+	<string name="about_bbs_summary">暂无</string>
     
     <!-- Interface -->
     <string name="interface_icon">主题</string>

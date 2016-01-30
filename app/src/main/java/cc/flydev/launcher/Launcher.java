@@ -200,7 +200,7 @@ public class Launcher extends Activity
 
     private static final String TOOLBAR_ICON_METADATA_NAME = "com.android.launcher.toolbar_icon";
     private static final String TOOLBAR_SEARCH_ICON_METADATA_NAME = "com.android.launcher.toolbar_search_icon";
-    private static final String TOOLBAR_VOICE_SEARCH_ICON_METADATA_NAME = "com.android.launcher.toolbar_voice_search_icon";
+    //private static final String TOOLBAR_VOICE_SEARCH_ICON_METADATA_NAME = "com.android.launcher.toolbar_voice_search_icon";
 
     public static final String SHOW_WEIGHT_WATCHER = "debug.show_mem";
     public static final boolean SHOW_WEIGHT_WATCHER_DEFAULT = false;
@@ -220,8 +220,8 @@ public class Launcher extends Activity
     static final int APPWIDGET_HOST_ID = 1024;
     private static final int EXIT_SPRINGLOADED_MODE_SHORT_TIMEOUT = 300;
     private static final int EXIT_SPRINGLOADED_MODE_LONG_TIMEOUT = 600;
-    private static final int SHOW_CLING_DURATION = 250;
-    private static final int DISMISS_CLING_DURATION = 200;
+    private static final int SHOW_CLING_DURATION = 150;
+    private static final int DISMISS_CLING_DURATION = 150;
 
     private static final Object sLock = new Object();
     private static int sScreen = DEFAULT_SCREEN;
@@ -319,11 +319,11 @@ public class Launcher extends Activity
     // Determines how long to wait after a rotation before restoring the screen
     // orientation to
     // match the sensor state.
-    private final int mRestoreScreenOrientationDelay = 500;
+    private final int mRestoreScreenOrientationDelay = 5;
 
     // External icons saved in case of resource changes, orientation, etc.
-    private static Drawable.ConstantState[] sGlobalSearchIcon = new Drawable.ConstantState[2];
-    private static Drawable.ConstantState[] sVoiceSearchIcon = new Drawable.ConstantState[2];
+    //private static Drawable.ConstantState[] sGlobalSearchIcon = new Drawable.ConstantState[2];
+    //private static Drawable.ConstantState[] sVoiceSearchIcon = new Drawable.ConstantState[2];
     private static Drawable.ConstantState[] sAppMarketIcon = new Drawable.ConstantState[2];
 
     private Intent mAppMarketIntent = null;
@@ -525,7 +525,7 @@ public class Launcher extends Activity
         IntentFilter filter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         registerReceiver(mCloseSystemDialogsReceiver, filter);
 
-        updateGlobalIcons();
+        //updateGlobalIcons();
 
         // On large interfaces, we want the screen to auto-rotate based on the
         // current orientation
@@ -585,7 +585,7 @@ public class Launcher extends Activity
         // If we have a saved version of these external icons, we load them up
         // immediately
         int coi = getCurrentOrientationIndexForGlobalIcons();
-        if (sGlobalSearchIcon[coi] == null || sVoiceSearchIcon[coi] == null || sAppMarketIcon[coi] == null) {
+        /*if (sGlobalSearchIcon[coi] == null || sVoiceSearchIcon[coi] == null || sAppMarketIcon[coi] == null) {
             if (!DISABLE_MARKET_BUTTON) {
                 updateAppMarketIcon();
             }
@@ -599,7 +599,7 @@ public class Launcher extends Activity
         if (sVoiceSearchIcon[coi] != null) {
             updateVoiceSearchIcon(sVoiceSearchIcon[coi]);
             voiceVisible = true;
-        }
+        }*/
         if (!DISABLE_MARKET_BUTTON && sAppMarketIcon[coi] != null) {
             updateAppMarketIcon(sAppMarketIcon[coi]);
         }
@@ -986,7 +986,7 @@ public class Launcher extends Activity
         InstallShortcutReceiver.disableAndFlushInstallQueue(this);
 
         // Update the voice search button proxy
-        updateVoiceButtonProxyVisible(false);
+        //updateVoiceButtonProxyVisible(false);
 
         // Again, as with the above scenario, it's possible that one or more of
         // the global icons
@@ -2397,7 +2397,8 @@ public class Launcher extends Activity
     public void onClickVoiceButton(View v) {
         v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
 
-        startVoice();
+        return;
+        //startVoice();
     }
 
     public void startVoice() {
@@ -3430,7 +3431,7 @@ public class Launcher extends Activity
         return mQsbBar;
     }
 
-    protected boolean updateGlobalSearchIcon() {
+    /*protected boolean updateGlobalSearchIcon() {
         final View searchButtonContainer = findViewById(R.id.search_button_container);
         final ImageView searchButton = (ImageView) findViewById(R.id.search_button);
         final View voiceButtonContainer = findViewById(R.id.voice_button_container);
@@ -3464,9 +3465,9 @@ public class Launcher extends Activity
             updateVoiceButtonProxyVisible(false);
             return false;
         }
-    }
+    }*/
 
-    protected void updateGlobalSearchIcon(Drawable.ConstantState d) {
+    /*protected void updateGlobalSearchIcon(Drawable.ConstantState d) {
         final View searchButtonContainer = findViewById(R.id.search_button_container);
         final View searchButton = (ImageView) findViewById(R.id.search_button);
         updateButtonWithDrawable(R.id.search_button, d);
@@ -3533,16 +3534,16 @@ public class Launcher extends Activity
             voiceButtonProxy.setVisibility(visible ? View.VISIBLE : View.GONE);
             voiceButtonProxy.bringToFront();
         }
-    }
+    }*/
 
     /**
      * This is an overrid eot disable the voice button proxy. If disabled is
      * true, then the voice button proxy will be hidden regardless of what
      * shouldVoiceButtonProxyBeVisible() returns.
      */
-    public void disableVoiceButtonProxy(boolean disabled) {
+    /*public void disableVoiceButtonProxy(boolean disabled) {
         updateVoiceButtonProxyVisible(disabled);
-    }
+    }*/
 
     /**
      * Sets the app market icon
@@ -4053,13 +4054,13 @@ public class Launcher extends Activity
     }
 
     @Override
-    public void bindSearchablesChanged() {
+    /*public void bindSearchablesChanged() {
         boolean searchVisible = updateGlobalSearchIcon();
         boolean voiceVisible = updateVoiceSearchIcon(searchVisible);
         if (mSearchDropTargetBar != null) {
             mSearchDropTargetBar.onSearchPackagesChanged(searchVisible, voiceVisible);
         }
-    }
+    }*/
 
     /**
      * Add the icons for all apps.

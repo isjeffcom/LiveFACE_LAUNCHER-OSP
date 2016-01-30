@@ -11,11 +11,12 @@ public class AbstractBarPreferenceActivity extends PreferenceActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 //		LauncherApplication.TintStatuBarNavigationBar(this);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar();
+		/*getActionBar().setDisplayHomeAsUpEnabled(true);
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
 			getActionBar().setBackgroundDrawable(this.getBaseContext().getResources().getDrawable(android.R.color.holo_blue_light));
 		}else{
 			getActionBar().setBackgroundDrawable(this.getBaseContext().getResources().getDrawable(R.drawable.BackBar));
-		}
+		}*/
 	}
 }

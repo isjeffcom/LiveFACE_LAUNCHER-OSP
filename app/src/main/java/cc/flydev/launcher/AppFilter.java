@@ -1,6 +1,7 @@
 package cc.flydev.launcher;
 
 import android.content.ComponentName;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 

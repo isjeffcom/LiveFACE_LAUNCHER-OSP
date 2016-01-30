@@ -177,7 +177,7 @@ public class LauncherModel extends BroadcastReceiver {
                                           ArrayList<AppInfo> appInfos,
                                           boolean matchPackageNamesOnly);
         public void bindPackagesUpdated(ArrayList<Object> widgetsAndShortcuts);
-        public void bindSearchablesChanged();
+        //public void bindSearchablesChanged();
         public boolean isAllAppsButtonRank(int rank);
         public void onPageBoundSynchronously(int page);
         public void dumpLogsToLocalData();
@@ -1118,7 +1118,7 @@ public class LauncherModel extends BroadcastReceiver {
             if (mCallbacks != null) {
                 Callbacks callbacks = mCallbacks.get();
                 if (callbacks != null) {
-                    callbacks.bindSearchablesChanged();
+                    //callbacks.bindSearchablesChanged();
                 }
             }
         }

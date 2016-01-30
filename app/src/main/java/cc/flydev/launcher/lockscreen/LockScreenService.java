@@ -27,7 +27,8 @@ public class LockScreenService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		if(!SettingsProvider.getBoolean(this, "settings_lock_open", true)) {
+		if(!SettingsProvider.getBoolean(this, "settings_lock_open", false)) {
+			//stopSelf() method cause a large CPU usage ! NEED ATTENTION ! fix later;
 			stopSelf();
 		}
 		startIntent = new Intent(LockScreenService.this, LockScreenActivity.class);
@@ -36,7 +37,7 @@ public class LockScreenService extends Service {
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_SCREEN_OFF);
 		LockScreenService.this.registerReceiver(MyLockScreenReceiver, filter);
-		System.out.println("onCreate()................");
+		//System.out.println("onCreate()................");
 	}
 
 	@Override
@@ -52,7 +53,7 @@ public class LockScreenService extends Service {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		System.out.println("onDestroy()...........");
+		//System.out.println("onDestroy()...........");
 		// 注销广播
 		unregisterReceiver(MyLockScreenReceiver);
 		// 再次启动服务
