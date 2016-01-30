@@ -233,7 +233,7 @@ s -->
 
     <!-- Clings -->
     <!-- The title text for the workspace cling [CHAR_LIMIT=60] -->
-    <string name="first_run_cling_title">Welcome! LiveFACE Laucnher Alpha 7</string>
+    <string name="first_run_cling_title">Welcome! LiveFACE LAUNCHER</string>
     <!-- The description of how to use the workspace [CHAR_LIMIT=60] -->
     <string name="first_run_cling_description">Make yourself at home.</string>
     <!-- The description of how to use the workspace [CHAR_LIMIT=60] -->

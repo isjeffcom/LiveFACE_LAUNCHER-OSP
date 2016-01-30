@@ -105,6 +105,16 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW"/>
+                    <catagory android:name="android.intent.category.DEFAULT"/>
+                    <catagory android:name="android.intent.category.BROWSABLE"/>
+                    <data
+                        android:host="face.flydev.cc"
+                        android:pathPrefix="/settings"
+                        android:scheme="http"/>
+                </intent-filter>
+
             </intent-filter>
         </activity>
 

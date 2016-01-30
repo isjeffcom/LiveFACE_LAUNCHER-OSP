@@ -170,8 +170,8 @@
     </style>
     <style name="CustomClingText">
     </style>
-    <style name="perference_set_activity">
-    	<item name="android:textColor">#FFFFFF</item>
+    <style name="perference_set_activity" parent="Theme.AppCompat.Light.DarkActionBar">
+    	<!--item name="android:textColor">#FFFFFF</item-->
         <!-- 字体颜色 -->
     </style>
 	
@@ -193,7 +193,8 @@
     </style>
 
 <style name="main_menu_animstyle">  
-       <item name="android:windowEnterAnimation">@anim/dialog_in</item>  
+    <!--item name="android:windowEnterAnimation">@anim/dialog_in</item-->
+    <item name="android:windowAnimationStyle">@android:style/Animation.InputMethod</item>
    </style>  
     
 	

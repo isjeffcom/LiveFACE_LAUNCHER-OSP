@@ -5,14 +5,15 @@
     <Preference
         android:title="@string/settings_interface">
         <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="cc.flydev.face"
-                android:targetClass="cc.flydev.launcher.settings.InterfaceActivity"/>
+                android:targetClass="cc.flydev.launcher.settings.InterfaceActivity"
+                android:targetPackage="cc.flydev.face"/>
     </Preference>
     
 	
 	<Preference
         android:title="@string/lock_settings_title">
-        <intent android:action="android.intent.action.MAIN"
+        <intent
+            android:action="android.intent.action.MAIN"
             android:targetPackage="cc.flydev.face"
             android:targetClass="cc.flydev.launcher.settings.LockSettingActivity"/>
     </Preference>

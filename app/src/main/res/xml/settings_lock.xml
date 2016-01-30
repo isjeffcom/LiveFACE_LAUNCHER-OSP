@@ -5,7 +5,7 @@
 	<CheckBoxPreference
 		android:key="settings_lock_open"
 		android:title="@string/settings_lock_open"
-		android:checked="true" />
+		android:checked="false" />
 	
 	<CheckBoxPreference
 		android:key="settings_lock_pass_open"
