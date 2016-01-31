@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- Live:prefix lm -->    
+    <item
+		android:title="@string/lm_sethome_title"
+		android:id="@+id/lm_set_as_home" />
+	
+	<item
+		android:title="@string/lm_settings_title"
+		android:id="@+id/lm_settings" />
+	
+	<item
+		android:title="@string/lm_system_settings_title"
+		android:id="@+id/lm_system_settings" />
+	
+	<item
+		android:title="@string/lm_more_title"
+		android:id="@+id/lm_more" />
+    
+</menu>

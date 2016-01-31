@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference
+		android:key="settings_testing_upmenu_open"
+		android:title="@string/settings_testing_upmenu_open"
+		android:checked="true" />
+	
+	 <Preference 
+            android:key="blur"
+            android:shouldDisableView="true"
+            android:title="@string/blur"
+            >
+            <intent 
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="cc.flydev.face"
+                android:targetClass="cc.flydev.launcher.settings.BlurSetting"
+                />
+        </Preference>
+	
+	<!--  
+	<Preference
+		android:title="启动次数测试">
+		<intent android:action="android.intent.action.MAIN"
+			android:targetPackage="cc.flydev.face"
+			android:targetClass="cc.flydev.launcher.debug.ShowTimesActivity"/>
+	</Preference>
+	-->
+	
+</PreferenceScreen>

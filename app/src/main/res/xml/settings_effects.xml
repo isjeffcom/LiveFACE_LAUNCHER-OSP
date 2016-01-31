@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory
+        android:title="@string/effects_global">
+        
+        <CheckBoxPreference
+            android:key="effects_global_auto_rotate"
+            android:title="@string/effects_global_auto_rotate_title"
+            android:checked="false"/>
+        
+    </PreferenceCategory>
+    
+</PreferenceScreen>

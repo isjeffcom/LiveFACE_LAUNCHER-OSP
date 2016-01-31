@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <ImageView android:id="@+id/iv_hide_shortcut_icon"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+    <TextView android:id="@+id/tv_hied_shortcut_title"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/iv_hide_shortcut_icon"
+        android:layout_centerVertical="true"       
+        android:textSize="20sp"
+        />
+    <CheckBox android:id="@+id/cb_hide_shortcut_ishide"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false"/>
+</RelativeLayout>

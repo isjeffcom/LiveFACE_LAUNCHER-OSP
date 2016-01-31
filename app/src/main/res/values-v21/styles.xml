@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--  Created by Modificator on 2016/1/28.12:13 -->
+<resources>
+
+    <style name="ActionBarSetWallpaperStyle" parent="@android:style/Widget.DeviceDefault.ActionButton">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="AppTheme" parent="@style/BaseWallpaperTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:colorControlActivated">@color/launcher_accent_color</item>
+        <item name="android:colorAccent">@color/launcher_accent_color</item>
+        <item name="android:colorPrimary">@color/launcher_accent_color</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

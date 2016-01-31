@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:fitsSystemWindows="true"
+	android:background="#1B2328"
+	android:gravity="center">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:id="@+id/setting_lock_screen_pass"
+		android:background="#1B2328">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:textColor="#FFFFFF"
+			android:layout_gravity="center"
+			android:id="@+id/setting_lock_pass_hint"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginBottom="12dp"
+			android:textColor="#FFFFFF"
+			android:id="@+id/setting_lock_pass_num"
+			android:layout_marginTop="12dp"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center">
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_1"/>
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:layout_marginRight="24dp"
+				android:layout_marginLeft="24dp"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_2"/>
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_3"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:layout_marginTop="20dp"
+			android:layout_marginBottom="20dp">
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_4"/>
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:layout_marginRight="24dp"
+				android:layout_marginLeft="24dp"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_5"/>
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_6"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center">
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_7"/>
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:layout_marginRight="24dp"
+				android:layout_marginLeft="24dp"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_8"/>
+
+			<ImageView
+				android:layout_height="48dp"
+				android:layout_width="48dp"
+				android:src="@drawable/lock_pass_btn"
+				android:padding="8dp"
+				android:id="@+id/setting_lock_pass_9"/>
+
+		</LinearLayout>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonBarButtonStyle"
+			android:text="清空密码"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="20dp"
+			android:textColor="#FFFFFF"
+			android:onClick="onClearPass"
+			android:id="@+id/setting_clear_pass"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:id="@+id/setting_lock_pass_step3">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/settings_lock_pass_step3"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:textColor="#FFFFFF"
+			android:layout_gravity="center"
+			android:gravity="center"/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:inputType="textPassword"
+			android:ems="10"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="24dp"
+			android:layout_marginBottom="24dp"
+			android:id="@+id/setting_lock_pass_complex"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonBarButtonStyle"
+			android:text="确定"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"
+			android:textColor="#FFFFFF"
+			android:onClick="onOkButton"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<version>1</version>
+	<iconback img1="" img2=""/> 
+	<scale factor="1" />
+	<!--numbers-->		
+	<item component="ComponentInfo{com.fone.player/com.fone.player.activity.main.SplashActivity}" drawable="app_100tv"/>
+ 	<item component="ComponentInfo{com.qihoo360.mobilesafe/com.qihoo360.mobilesafe.ui.index.AppEnterActivity}" drawable="app_360"/>  
+  	<item component="ComponentInfo{com.qihoo.cleandroid_cn/com.qihoo360.mobilesafe.opti.ui.main.AppEnterActivity}" drawable="app_360clean"/>   
+   	<item component="ComponentInfo{com.qihoo360.mobilesafe.opti.powerctl/com.qihoo360.mobilesafe.opti.powerctl.ui.activity.MainAvtivity}" drawable="app_360power"/>   
+	<item component="ComponentInfo{com.Android56/com.Android56.ActivityLogo}" drawable="app_56"/>
+ 	<item component="ComponentInfo{com.dragon.android.pandaspace/com.dragon.android.pandaspace.main.MainActivity}" drawable="app_91"/>   
+ 
+    <!--a-->
+    
+    <item component="ComponentInfo{com.qiyi.video/com.qiyi.video.WelcomeActivity}" drawable="app_aiqiyi"/>
+     
+    <item component="ComponentInfo{cn.amazon.mShop.android/com.amazon.mShop.splashscreen.StartupActivity}" drawable="app_amazon"/>    
+    
+    <item component="ComponentInfo{com.adobe.air/com.adobe.air.AdobeAIRMainActivity}" drawable="app_aair"/>
+     
+	<item  component="ComponentInfo{com.antutu.ABenchMark/com.antutu.ABenchMark.ABenchMarkStart}" drawable="app_antutu"/>
+		
+	<item component="ComponentInfo{com.anyview/com.anyview.Splash}" drawable="app_anyview"/>
+
+	<item component="ComponentInfo{cn.goapk.market/cn.goapk.market.GoApkLoginAndRegister}" drawable="app_anzhi"/>
+     
+	<item component="ComponentInfo{com.androidesk/com.adesk.picasso.view.MainActivity}" drawable="app_anzhuobizhi"/>
+   
+	<item component="ComponentInfo{com.adobe.reader/com.adobe.reader.AdobeReader}" drawable="app_ar"/>
+		
+	<!--w-->	
+	<item component="ComponentInfo{cn.wps.moffice_eng/cn.wps.moffice.documentmanager.PreStartActivity}" drawable="app_wps"/>
+
+
+	
+    <!-- Browser -->
+    <item component="ComponentInfo{com.android.browser/com.android.browser.BrowserActivity}" drawable="ic_launcher_browser"/>
+    <item component="ComponentInfo{com.google.android.browser/com.android.browser.BrowserActivity}" drawable="ic_launcher_browser"/>
+
+
+    <!-- Calculator -->
+    <item component="ComponentInfo{com.android.calculator2/com.android.calculator2.Calculator}" drawable="ic_launcher_calculator"/>
+    <item component="ComponentInfo{com.sec.android.app.calculator/com.sec.android.app.calculator.Calculator}" drawable="ic_launcher_calculator"/>
+		
+
+    <!-- Calendar -->
+    <item component="ComponentInfo{com.android.calendar/com.android.calendar.LaunchActivity}" drawable="ic_launcher_calendar"/>
+    <item component="ComponentInfo{com.htc.calendar/com.htc.calendar.LaunchActivity}" drawable="ic_launcher_calendar"/>
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.LaunchActivity}" drawable="ic_launcher_calendar"/>
+    <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="ic_launcher_calendar"/>
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="ic_launcher_calendar"/>
+
+
+
+    <!-- Camera -->
+    <item component="ComponentInfo{com.motorola.Camera/com.motorola.Camera.Camera}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.android.camera/com.android.camera.CameraEntry}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.sec.android.app.camera/com.sec.android.app.camera.Camera}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.google.android.camera/com.android.camera.Camera}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.android.camera/com.android.camera.Camera}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.sonyericsson.android.camera/com.sonyericsson.android.camera.CameraActivity}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraApp}" drawable="ic_launcher_camera"/>
+    <item component="ComponentInfo{com.android.gallery3d/com.android.camera.CameraLauncher}" drawable="ic_launcher_camera"/>
+	
+
+    <!-- Clock -->
+    <item component="ComponentInfo{com.android.alarmclock/com.android.alarmclock.AlarmClock}" drawable="ic_launcher_alarmclock"/>
+    <item component="ComponentInfo{com.htc.android.worldclock/com.htc.android.worldclock.WorldClockTabControl}" drawable="ic_launcher_alarmclock"/>
+    <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="ic_launcher_alarmclock"/>
+    <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="ic_launcher_alarmclock"/>
+    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="ic_launcher_alarmclock"/>
+    <item component="ComponentInfo{com.motorola.blur.alarmclock/com.motorola.blur.alarmclock.AlarmClock}" drawable="ic_launcher_alarmclock"/>
+
+
+    <!-- Contacts -->
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivity}" drawable="ic_launcher_contacts"/>
+    <item component="ComponentInfo{com.android.htccontacts/com.android.htccontacts.ContactsTabActivity}" drawable="ic_launcher_contacts"/>
+    <item component="ComponentInfo{com.android.contacts/com.sec.android.app.contacts.PhoneBookTopMenuActivity}" drawable="ic_launcher_contacts"/>
+    <item component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.SocialPhonebookActivity}" drawable="ic_launcher_contacts"/>
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="ic_launcher_contacts"/>
+
+    <!-- Dialer -->
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsActivity}" drawable="ic_launcher_phone"/>
+    <item component="ComponentInfo{com.android.htcdialer/com.android.htcdialer.Dialer}" drawable="ic_launcher_phone"/>
+    <item component="ComponentInfo{com.sec.android.app.dialertab/com.sec.android.app.dialertab.DialerTabActivity}" drawable="ic_launcher_phone"/>
+    <item component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.DialerEntryActivity}" drawable="ic_launcher_phone"/>
+    <item component="ComponentInfo{com.android.contacts/com.sec.android.app.contacts.DialerEntryActivity}" drawable="ic_launcher_phone"/>
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.DialtactsActivity}" drawable="ic_launcher_phone"/>
+
+    <!-- Downloads -->
+    <item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadList}" drawable="ic_launcher_download"/>
+    <item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadsListTab}" drawable="ic_launcher_download"/>
+
+    <!-- Email -->
+    <item component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}" drawable="ic_launcher_mail"/>
+    <item component="ComponentInfo{com.htc.android.mail/com.htc.android.mail.MailListTab}" drawable="ic_launcher_mail"/>
+    <item component="ComponentInfo{com.google.android.email/com.android.email.activity.Welcome}" drawable="ic_launcher_mail"/>
+    <item component="ComponentInfo{com.motorola.blur.email/com.motorola.blur.email.mailbox.ViewFolderActivity}" drawable="ic_launcher_mail"/>
+
+    <!-- Gallery -->
+    <item component="ComponentInfo{com.cooliris.media/com.cooliris.media.Gallery}" drawable="ic_launcher_gallery"/>
+    <item component="ComponentInfo{com.htc.album/com.htc.album.AlbumTabSwitchActivity}" drawable="ic_launcher_gallery"/>
+    <item component="ComponentInfo{com.google.android.gallery3d/com.cooliris.media.Gallery}" drawable="ic_launcher_gallery"/>
+    <item component="ComponentInfo{com.google.android.gallery3d/com.android.gallery3d.app.Gallery}" drawable="ic_launcher_gallery"/>
+    <item component="ComponentInfo{com.motorola.blurgallery/com.motorola.cgallery.Dashboard}" drawable="ic_launcher_gallery"/>
+
+    <!-- Music -->
+    <item component="ComponentInfo{com.android.music/com.android.music.MusicBrowserActivity}" drawable="ic_launcher_music"/>
+    <item component="ComponentInfo{com.htc.music/com.htc.music.HtcMusic}" drawable="ic_launcher_music"/>
+    <item component="ComponentInfo{com.sec.android.app.music/com.sec.android.app.music.list.activity.MpMainTabActivity}" drawable="ic_launcher_music"/>
+    <item component="ComponentInfo{com.android.music/com.android.music.MusicBrowserActivity}" drawable="ic_launcher_music"/>
+    <item component="ComponentInfo{com.android.music/com.android.music.list.activity.MpMainTabActivity}" drawable="ic_launcher_music"/>
+    <item component="ComponentInfo{com.android.music/com.android.music.ArtistAlbumBrowserActivity}" drawable="ic_launcher_music"/>
+
+
+    <!-- Settings -->
+    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings}" drawable="ic_launcher_settings"/>
+    <item component="ComponentInfo{com.android.settings/com.android.settings.framework.activity.HtcSettings}" drawable="ic_launcher_settings"/>
+
+    <!-- SMS -->
+    <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ConversationList}" drawable="ic_launcher_smsmms"/>
+    <item component="ComponentInfo{com.sonyericsson.conversations/com.sonyericsson.conversations.ui.ConversationListActivity}" drawable="ic_launcher_smsmms"/>
+
+
+
+</resources>
