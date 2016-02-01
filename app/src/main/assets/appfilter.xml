@@ -442,4 +442,9 @@
 	<item component="ComponentInfo{com.skype.raider/com.skype.android.SkypeApplication}" drawable="app_skype"/>
 	<item component="ComponentInfo{com.snapchat.android/com.snapchat.android.LandingPageActivity}" drawable="app_snapchat"/>
 	<item component="ComponentInfo{bbc.mobile.weather/bbc.mobile.weather.ui.MainActivity}" drawable="app_bbcweather"/>
+	<item component="ComponentInfo{com.cnbeta.android}" drawable="app_purecnbeta"/>
+	<item component="ComponentInfo{com.p1.mobile.putong}" drawable="app_tantan"/>
+	<item component="ComponentInfo{com.wuba}" drawable="app_58"/>
+	<item component="ComponentInfo{com.baidu.homework}" drawable="app_zuoyebang"/>
+	<item component="ComponentInfo{com.kibey.echo}" drawable="app_echo"/>
 </resources>
