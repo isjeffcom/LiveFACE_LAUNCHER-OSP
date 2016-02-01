@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -31,10 +32,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import cc.flydev.face.R;
 import cc.flydev.launcher.HideShortcutActivity.HiedShortcutAdapter.ViewHolder;
 
-public class HideShortcutActivity extends ListActivity implements OnClickListener {
+public class HideShortcutActivity extends AppCompatActivity implements OnClickListener {
 	private Context mContext;
 	private TextView mTvCancel;
 	private TextView mTvSave;
@@ -42,23 +44,20 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 	private ListView mListView;
 	private HiedShortcutAdapter mAdapter;
 	private List<ShortcutInfo> mData;
-	private Map<Integer,ShortcutInfo> mHideData = new HashMap<Integer,ShortcutInfo>();
-	private Map<Integer,ShortcutInfo> mRawData = new HashMap<Integer,ShortcutInfo>();
+	private Map<Integer, ShortcutInfo> mHideData = new HashMap<Integer, ShortcutInfo>();
+	private Map<Integer, ShortcutInfo> mRawData = new HashMap<Integer, ShortcutInfo>();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.setting_hide_shortcut);
 //		LauncherApplication.TintStatuBarNavigationBar(this);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
-			getActionBar().setBackgroundDrawable(this.getBaseContext().getResources().getDrawable(android.R.color.holo_blue_light));
-		}else{
-			getActionBar().setBackgroundDrawable(this.getBaseContext().getResources().getDrawable(R.drawable.BackBar));
-		}
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		mContext = this;
-		initView();		
+		initView();
 	}
-	
+
 	private void initView() {
 		mTvCancel = (TextView) findViewById(R.id.tv_hide_shortcut_cancel);
 		mTvCancel.setOnClickListener(this);
@@ -69,24 +68,24 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+									int position, long id) {
 				CheckBox db = ((ViewHolder) view.getTag()).cbIsHide;
 				boolean isChecked = db.isChecked();
-				if(isChecked){
+				if (isChecked) {
 					((ViewHolder) view.getTag()).cbIsHide.setChecked(false);
 					((ShortcutInfo) view.getTag(R.id.ll_item)).isHide = false;
 					mHideData.remove(position);
-				}else{
+				} else {
 					((ViewHolder) view.getTag()).cbIsHide.setChecked(true);
 					ShortcutInfo appInfo = ((ShortcutInfo) view.getTag(R.id.ll_item));
 					appInfo.isHide = true;
-					mHideData.put(position, appInfo);				
+					mHideData.put(position, appInfo);
 				}
 			}
 		});
 		mData = new ArrayList<ShortcutInfo>();
 		mAdapter = new HiedShortcutAdapter(mData);
-		setListAdapter(mAdapter);
+		mListView.setAdapter(mAdapter);
 		initData();
 	}
 
@@ -98,24 +97,24 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 	protected void onResume() {
 		super.onResume();
 	}
-	
-	private class LoadAppInfo extends AsyncTask<Void, Void, List<ShortcutInfo>>{
+
+	private class LoadAppInfo extends AsyncTask<Void, Void, List<ShortcutInfo>> {
 
 		@Override
 		protected List<ShortcutInfo> doInBackground(Void... params) {
 			mHideData.clear();
 			SharedPreferences hideShortCutsharedPrefs = LauncherAppState.getInstance().getHideShortCutSharedPrefs();
-			String hide = hideShortCutsharedPrefs.getString("hide","");
+			String hide = hideShortCutsharedPrefs.getString("hide", "");
 			List<String> packageNames = null;
-			if(!TextUtils.isEmpty(hide)){
+			if (!TextUtils.isEmpty(hide)) {
 				String[] packageNameFromSharePrefs = hide.split("u007a");
 				packageNames = Arrays.asList(packageNameFromSharePrefs);
-			}			
+			}
 			List<ShortcutInfo> appInfos = LauncherAppState.getInstance().getAppInfos();
-			for (int index = 0;appInfos != null && index < appInfos.size();index++) {
-				ShortcutInfo appInfo=appInfos.get(index);
+			for (int index = 0; appInfos != null && index < appInfos.size(); index++) {
+				ShortcutInfo appInfo = appInfos.get(index);
 				String packageName = appInfo.intent.getComponent().getPackageName();
-				if(packageNames!=null && packageNames.contains(packageName)){
+				if (packageNames != null && packageNames.contains(packageName)) {
 					appInfo.isHide = true;
 					mHideData.put(index, appInfo);
 					mRawData.put(index, appInfo);
@@ -136,18 +135,18 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 			mAdapter.notifyDataSetChanged();
 		}
 	}
-	
-	class HiedShortcutAdapter extends BaseAdapter{
+
+	class HiedShortcutAdapter extends BaseAdapter {
 		private List<ShortcutInfo> appInfos;
-		
+
 		public void setAppInfos(List<ShortcutInfo> appInfos) {
 			this.appInfos = appInfos;
 		}
-		
+
 		public HiedShortcutAdapter(List<ShortcutInfo> appInfos) {
 			this.appInfos = appInfos;
 		}
-		
+
 		@Override
 		public boolean isEnabled(int position) {
 			return true;
@@ -155,7 +154,7 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 
 		@Override
 		public int getCount() {
-			return appInfos!= null && appInfos.size() != 0 ?appInfos.size() : 0;
+			return appInfos != null && appInfos.size() != 0 ? appInfos.size() : 0;
 		}
 
 		@Override
@@ -171,7 +170,7 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder viewHolder = null;
-			if(convertView == null){
+			if (convertView == null) {
 				viewHolder = new ViewHolder();
 				LayoutInflater inflater = LayoutInflater.from(mContext);
 				convertView = inflater.inflate(R.layout.setting_hide_shortcut_listview_item, parent, false);
@@ -179,7 +178,7 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 				viewHolder.tvAppLabel = (TextView) convertView.findViewById(R.id.tv_hied_shortcut_title);
 				viewHolder.cbIsHide = (CheckBox) convertView.findViewById(R.id.cb_hide_shortcut_ishide);
 				convertView.setTag(viewHolder);
-			}else{
+			} else {
 				viewHolder = (ViewHolder) convertView.getTag();
 			}
 			ShortcutInfo appInfo = appInfos.get(position);
@@ -188,84 +187,84 @@ public class HideShortcutActivity extends ListActivity implements OnClickListene
 			String appName = (String) appInfo.intent.resolveActivityInfo(pm, 0).loadLabel(pm);
 			viewHolder.tvAppLabel.setText(appName);
 			viewHolder.cbIsHide.setChecked(appInfo.isHide);
-			
+
 			convertView.setTag(R.id.ll_item, appInfo);
 			return convertView;
 		}
-		
-		final class ViewHolder{
+
+		final class ViewHolder {
 			ImageView ivAppIcon;
 			TextView tvAppLabel;
 			CheckBox cbIsHide;
 		}
 	}
-		
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.tv_hide_shortcut_cancel:
-			finish();
-			break;
-		case R.id.tv_hide_shortcut_save:
-			StringBuffer sb = new StringBuffer();
-			SharedPreferences hideShortCutsharedPrefs = LauncherAppState.getInstance().getHideShortCutSharedPrefs();
-			ArrayList<Long> workspaceScreens = new ArrayList<Long>();
-			final ContentResolver contentResolver = mContext.getContentResolver();
-	        final Uri screensUri = LauncherSettings.WorkspaceScreens.CONTENT_URI;
-	        final Cursor sc = contentResolver.query(screensUri, null, null, null, null);
-	        try {
-	            final int idIndex = sc.getColumnIndexOrThrow(
-	                    LauncherSettings.WorkspaceScreens._ID);
-	            while (sc.moveToNext()) {
-	                try {
-	                    long screenId = sc.getLong(idIndex);
-	                    workspaceScreens.add(screenId);
-	                } catch (Exception e) {
-	                }
-	            }
-	        } finally {
-	            sc.close();
-	        }
-	        int startSearchPageIndex = workspaceScreens.isEmpty() ? 0 : 1;
-	        if(!mRawData.equals(mHideData)){
-				for (Map.Entry<Integer, ShortcutInfo> entry : mHideData.entrySet()) {
-					if(entry.getValue().isHide){
-						String formatPackagerName = String.format("%su007a",entry.getValue().intent.getComponent().getPackageName());
-						sb.append(formatPackagerName);
-						LauncherModel.modifyItemInDatabase(mContext, entry.getValue(), LauncherSettings.Favorites.CONTAINER_DESKTOP, 
-								entry.getValue().screenId, -1, -1, 1, 1);
+			case R.id.tv_hide_shortcut_cancel:
+				finish();
+				break;
+			case R.id.tv_hide_shortcut_save:
+				StringBuffer sb = new StringBuffer();
+				SharedPreferences hideShortCutsharedPrefs = LauncherAppState.getInstance().getHideShortCutSharedPrefs();
+				ArrayList<Long> workspaceScreens = new ArrayList<Long>();
+				final ContentResolver contentResolver = mContext.getContentResolver();
+				final Uri screensUri = LauncherSettings.WorkspaceScreens.CONTENT_URI;
+				final Cursor sc = contentResolver.query(screensUri, null, null, null, null);
+				try {
+					final int idIndex = sc.getColumnIndexOrThrow(
+							LauncherSettings.WorkspaceScreens._ID);
+					while (sc.moveToNext()) {
+						try {
+							long screenId = sc.getLong(idIndex);
+							workspaceScreens.add(screenId);
+						} catch (Exception e) {
 						}
+					}
+				} finally {
+					sc.close();
 				}
-				Editor editor = hideShortCutsharedPrefs.edit();
-				editor.putString("hide", sb.toString()).commit();
-	        }
-			for (Map.Entry<Integer, ShortcutInfo> entry : mRawData.entrySet()) {
-				if(mHideData.size() == 0){
-					Pair<Long, int[]> coords = LauncherModel.findNextAvailableIconSpace(mContext, entry.getValue().title.toString(),
-							entry.getValue().intent, startSearchPageIndex, workspaceScreens);
-					LauncherModel.modifyItemInDatabase(mContext, entry.getValue(),
-							LauncherSettings.Favorites.CONTAINER_DESKTOP,
-							coords.first, coords.second[0], coords.second[1],1,1);
-				}else if(!mHideData.containsValue(entry.getValue())){
-					Pair<Long, int[]> coords = LauncherModel.findNextAvailableIconSpace(mContext, entry.getValue().title.toString(),
-							entry.getValue().intent, startSearchPageIndex, workspaceScreens);
-					LauncherModel.modifyItemInDatabase(mContext, entry.getValue(),
-							LauncherSettings.Favorites.CONTAINER_DESKTOP,
-							coords.first, coords.second[0], coords.second[1],1,1);
+				int startSearchPageIndex = workspaceScreens.isEmpty() ? 0 : 1;
+				if (!mRawData.equals(mHideData)) {
+					for (Map.Entry<Integer, ShortcutInfo> entry : mHideData.entrySet()) {
+						if (entry.getValue().isHide) {
+							String formatPackagerName = String.format("%su007a", entry.getValue().intent.getComponent().getPackageName());
+							sb.append(formatPackagerName);
+							LauncherModel.modifyItemInDatabase(mContext, entry.getValue(), LauncherSettings.Favorites.CONTAINER_DESKTOP,
+									entry.getValue().screenId, -1, -1, 1, 1);
+						}
+					}
+					Editor editor = hideShortCutsharedPrefs.edit();
+					editor.putString("hide", sb.toString()).commit();
 				}
-			}			
-			if(!mRawData.equals(mHideData)){
-				LauncherAppState.getInstance().getModel().resetLoadedState(false, true);
-				LauncherAppState.getInstance().getModel().startLoaderFromBackground();				
-			}
-			finish();
-			break;
+				for (Map.Entry<Integer, ShortcutInfo> entry : mRawData.entrySet()) {
+					if (mHideData.size() == 0) {
+						Pair<Long, int[]> coords = LauncherModel.findNextAvailableIconSpace(mContext, entry.getValue().title.toString(),
+								entry.getValue().intent, startSearchPageIndex, workspaceScreens);
+						LauncherModel.modifyItemInDatabase(mContext, entry.getValue(),
+								LauncherSettings.Favorites.CONTAINER_DESKTOP,
+								coords.first, coords.second[0], coords.second[1], 1, 1);
+					} else if (!mHideData.containsValue(entry.getValue())) {
+						Pair<Long, int[]> coords = LauncherModel.findNextAvailableIconSpace(mContext, entry.getValue().title.toString(),
+								entry.getValue().intent, startSearchPageIndex, workspaceScreens);
+						LauncherModel.modifyItemInDatabase(mContext, entry.getValue(),
+								LauncherSettings.Favorites.CONTAINER_DESKTOP,
+								coords.first, coords.second[0], coords.second[1], 1, 1);
+					}
+				}
+				if (!mRawData.equals(mHideData)) {
+					LauncherAppState.getInstance().getModel().resetLoadedState(false, true);
+					LauncherAppState.getInstance().getModel().startLoaderFromBackground();
+				}
+				finish();
+				break;
 		}
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 	}
-	
+
 }

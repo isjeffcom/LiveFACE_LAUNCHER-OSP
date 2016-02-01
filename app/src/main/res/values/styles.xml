@@ -40,6 +40,10 @@
 
     <style name="AppTheme" parent="@style/BaseWallpaperTheme"></style>
 
+    <style name="SettingTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+
     <style name="ClingButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

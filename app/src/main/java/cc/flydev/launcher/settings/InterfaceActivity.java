@@ -3,6 +3,8 @@ package cc.flydev.launcher.settings;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
+import android.preference.ListPreference;
+import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
@@ -44,9 +46,9 @@ public class InterfaceActivity extends AbstractBarPreferenceActivity {
         private Preference mChooser;
         private Preference mHideIcon;
         private EditTextPreference mGlobalFontSize;
-        private EditTextPreference mHomescreenIconSize;
+        private ListPreference mHomescreenIconSize;
         private CheckBoxPreference mEnableDrawer;
-        private EditTextPreference mHotseatIconSize;
+        private ListPreference mHotseatIconSize;
         private CheckBoxPreference mAutoRotate;
 
         @Override
@@ -56,9 +58,9 @@ public class InterfaceActivity extends AbstractBarPreferenceActivity {
             mCurrent = findPreference(KEY_ICONPACK_CURRENT);
             mChooser = findPreference(KEY_ICONPACK_CHOOSER);
             mGlobalFontSize = (EditTextPreference) findPreference(SettingsProvider.KEY_INTERFACE_GLOBAL_FONT_SIZE);
-            mHomescreenIconSize = (EditTextPreference) findPreference(SettingsProvider.KEY_INTERFACE_HOMESCREEN_DRAWER_ICON_SIZE);
+            mHomescreenIconSize = (ListPreference) findPreference(SettingsProvider.KEY_INTERFACE_HOMESCREEN_DRAWER_ICON_SIZE);
             mEnableDrawer = (CheckBoxPreference) findPreference(SettingsProvider.KEY_INTERFACE_HOMESCREEN_DRAWER_ENABLE_DRAWER);
-            mHotseatIconSize = (EditTextPreference) findPreference(SettingsProvider.KEY_INTERFACE_HOTSEAT_ICON_SIZE);
+            mHotseatIconSize = (ListPreference) findPreference(SettingsProvider.KEY_INTERFACE_HOTSEAT_ICON_SIZE);
 
 
             mHideIcon = findPreference("interface_hide_shortcut");
@@ -78,11 +80,11 @@ public class InterfaceActivity extends AbstractBarPreferenceActivity {
 
             int homescreenIconSize = SettingsProvider.getInt(getActivity(), SettingsProvider.KEY_INTERFACE_HOMESCREEN_DRAWER_ICON_SIZE, 48);
             mHomescreenIconSize.setSummary(homescreenIconSize + " dp");
-            mHomescreenIconSize.setText(String.valueOf(homescreenIconSize));
+            mHomescreenIconSize.setValue(String.valueOf(homescreenIconSize));
 
             int hotseatIconSize = SettingsProvider.getInt(getActivity(), SettingsProvider.KEY_INTERFACE_HOTSEAT_ICON_SIZE, 48);
             mHotseatIconSize.setSummary(hotseatIconSize + " dp");
-            mHotseatIconSize.setText(String.valueOf(hotseatIconSize));
+            mHotseatIconSize.setValue(String.valueOf(hotseatIconSize));
 
             mEnableDrawer.setChecked(SettingsProvider.getBoolean(getActivity(), SettingsProvider.KEY_INTERFACE_HOMESCREEN_DRAWER_ENABLE_DRAWER, false));
 

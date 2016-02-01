@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    
-        
-        <Preference
-            android:key="interface_iconpack_current"
-            android:title="@string/interface_iconpack_current_title"
-            android:summary="@string/interface_iconpack_current_summary_default" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <Preference
-            android:key="interface_iconpack_chooser"
-            android:title="@string/interface_iconpack_chooser_title">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="cc.flydev.face"
-                android:targetClass="cc.flydev.launcher.settings.IconPackChooserActivity"/>
-        </Preference>
-        
-        <Preference 
-            android:key="interface_hide_shortcut"
-            android:shouldDisableView="true"
-            android:title="@string/interface_hide_shortcut_title"
-            >
-            <intent 
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="cc.flydev.face"
-                android:targetClass="cc.flydev.launcher.HideShortcutActivity"
-                />
-        </Preference>
-    
-        
-        <EditTextPreference
-            android:key="interface_global_font_size"
-            android:title="@string/interface_global_font_size_title"
-            android:inputType="number"/>
-        
-    
-        
-        <EditTextPreference 
-            android:key="interface_homescreen_drawer_icon_size"
-            android:title="@string/interface_homescreen_drawer_icon_size_title"
-            android:inputType="number"/>
-        
-        <CheckBoxPreference
-            android:key="interface_homescreen_drawer_enable_drawer"
-            android:title="@string/interface_homescreen_drawer_enable_drawer"
-            android:checked="false"/>
-                   
-        <EditTextPreference
-            android:key="interface_hotseat_icon_size"
-            android:title="@string/interface_hotseat_icon_size_title"
-            android:inputType="number"/>
-        
+
+    <Preference
+        android:key="interface_iconpack_current"
+        android:summary="@string/interface_iconpack_current_summary_default"
+        android:title="@string/interface_iconpack_current_title" />
+
+    <Preference
+        android:key="interface_iconpack_chooser"
+        android:title="@string/interface_iconpack_chooser_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="cc.flydev.launcher.settings.IconPackChooserActivity"
+            android:targetPackage="cc.flydev.face" />
+    </Preference>
+
+    <Preference
+        android:key="interface_hide_shortcut"
+        android:shouldDisableView="true"
+        android:title="@string/interface_hide_shortcut_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="cc.flydev.launcher.HideShortcutActivity"
+            android:targetPackage="cc.flydev.face" />
+    </Preference>
+
+
+    <EditTextPreference
+        android:inputType="number"
+        android:key="interface_global_font_size"
+        android:title="@string/interface_global_font_size_title" />
+
+
+    <ListPreference
+        android:dialogTitle="@string/interface_homescreen_drawer_icon_size_title"
+        android:entries="@array/icon_size_desc"
+        android:entryValues="@array/icon_size_val"
+        android:key="interface_homescreen_drawer_icon_size"
+        android:title="@string/interface_homescreen_drawer_icon_size_title" />
+
     <CheckBoxPreference
-            android:key="effects_global_auto_rotate"
-            android:title="@string/effects_global_auto_rotate_title"
-            android:checked="false"/>
+        android:checked="false"
+        android:key="interface_homescreen_drawer_enable_drawer"
+        android:title="@string/interface_homescreen_drawer_enable_drawer" />
+
+    <ListPreference
+        android:dialogTitle="@string/interface_hotseat_icon_size_title"
+        android:entries="@array/icon_size_desc"
+        android:entryValues="@array/icon_size_val"
+        android:key="interface_hotseat_icon_size"
+        android:title="@string/interface_hotseat_icon_size_title" />
+
+    <CheckBoxPreference
+        android:checked="false"
+        android:key="effects_global_auto_rotate"
+        android:title="@string/effects_global_auto_rotate_title" />
 </PreferenceScreen>

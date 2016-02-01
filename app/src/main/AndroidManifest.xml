@@ -8,7 +8,7 @@
         android:name="cc.flydev.launcher.permission.PRELOAD_WORKSPACE"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="signature" />
-        <!--android:protectionLevel="system|signature" />-->
+    <!--android:protectionLevel="system|signature" />-->
     <permission
         android:name="com.android.launcher.permission.INSTALL_SHORTCUT"
         android:description="@string/permdesc_install_shortcut"
@@ -94,8 +94,8 @@
         android:icon="@mipmap/ic_launcher_home"
         android:label="@string/application_name"
         android:largeHeap="@bool/config_largeHeap"
-        android:theme="@style/AppTheme"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
         <activity
             android:name="cc.flydev.launcher.SwitchLockActivity"
@@ -107,13 +107,15 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <intent-filter>
-                    <action android:name="android.intent.action.VIEW"/>
-                    <catagory android:name="android.intent.category.DEFAULT"/>
-                    <catagory android:name="android.intent.category.BROWSABLE"/>
+                    <action android:name="android.intent.action.VIEW" />
+
+                    <catagory android:name="android.intent.category.DEFAULT" />
+                    <catagory android:name="android.intent.category.BROWSABLE" />
+
                     <data
                         android:host="face.flydev.cc"
                         android:pathPrefix="/settings"
-                        android:scheme="http"/>
+                        android:scheme="http" />
                 </intent-filter>
 
             </intent-filter>
@@ -221,7 +223,7 @@
             android:name="cc.flydev.launcher.settings.BlurSetting"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/blur"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -245,7 +247,7 @@
             android:finishOnCloseSystemDialogs="true"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/settings_about"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -259,7 +261,7 @@
             android:finishOnCloseSystemDialogs="true"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/settings_interface"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -273,7 +275,7 @@
             android:finishOnCloseSystemDialogs="true"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/settings_effects"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -287,7 +289,7 @@
             android:finishOnCloseSystemDialogs="true"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/interface_iconpack_chooser_title"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -301,7 +303,7 @@
             android:finishOnCloseSystemDialogs="true"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/lock_wallpaper_settings_title"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -315,7 +317,7 @@
             android:finishOnCloseSystemDialogs="true"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/settings_lock_pass"
-            android:theme="@style/perference_set_activity">
+            android:theme="@style/SettingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -493,10 +495,10 @@
             android:name="cc.flydev.launcher.HideShortcutActivity"
             android:icon="@mipmap/ic_launcher_home"
             android:label="@string/interface_hide_shortcut_title"
-            android:parentActivityName="cc.flydev.launcher.settings.InterfaceActivity"></activity>
+            android:parentActivityName="cc.flydev.launcher.settings.InterfaceActivity"
+            android:theme="@style/SettingTheme"></activity>
 
         <activity android:name="cc.flydev.launcher.GuideActivity"></activity>
-
 
 
     </application>

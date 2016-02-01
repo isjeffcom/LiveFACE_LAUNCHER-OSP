@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<?xml version="1.0" encoding="UTF-8"?><!--
 /*
 * Copyright (C) 2008 The Android Open Source Project
 *
@@ -17,18 +16,17 @@
 */
  -->
 
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="application_name" msgid="5181331383435256801">"LiveFACE桌面"</string>
     <string name="home" msgid="7658288663002113681">"主屏"</string>
     <string name="uid_name" msgid="7820867637514617527">"LiveFACE"</string>
     <string name="folder_name" msgid="7371454440695724752"></string>
     <string name="wallpaper_instructions" msgid="563973358787555519">"选择壁纸"</string>
-  <plurals name="number_of_items_selected">
-    <item quantity="zero" msgid="7464587177007785408">"已选择%1$d项"</item>
-    <item quantity="one" msgid="142482526010824029">"已选择%1$d项"</item>
-    <item quantity="other" msgid="1418352074806573570">"已选择%1$d项"</item>
-  </plurals>
+    <plurals name="number_of_items_selected">
+        <item msgid="7464587177007785408" quantity="zero">"已选择%1$d项"</item>
+        <item msgid="142482526010824029" quantity="one">"已选择%1$d项"</item>
+        <item msgid="1418352074806573570" quantity="other">"已选择%1$d项"</item>
+    </plurals>
     <string name="wallpaper_accessibility_name" msgid="1655953108132967972">"第%1$d张壁纸，共%2$d张"</string>
     <string name="announce_selection" msgid="8338254712932127413">"已选择<xliff:g id="LABEL">%1$s</xliff:g>"</string>
     <string name="wallpaper_delete" msgid="8095005658756613921">"删除"</string>
@@ -124,54 +122,58 @@
     <string name="settings_button_text" msgid="8119458837558863227">"设置"</string>
     <string name="about_title2">修改</string>
     <string name="about_title3">/@Root_Feng</string>
-	<string name="lm_sethome_title">设为主屏幕</string>
-	<string name="lm_more_title">更多设置</string>
-	<string name="chooser_ab_downloadmore">主题商店</string>
-	<string name="lm_settings_title">桌面设置</string>
-	<string name="lm_system_settings_title">系统设置</string>
-	<string name="launcher_sethome_success">主屏幕设置成功</string>
-	<string name="notice">如果您要使用LiveFACE锁屏，为确保使用正常，请关闭系统锁屏（屏幕安全 > 锁屏方式 > 无）</string>
-	<string name="noticetitle">兼容性提示</string>
-	<string name="settings_lock_pass">设置锁屏密码</string>
-	<string name="settings_lock_pass_verify">验证现有密码</string>
-	<string name="settings_lock_pass_step1">设置四位数锁屏密码</string>
-	<string name="settings_lock_pass_step2">确认四位数锁屏密码</string>
-	<string name="settings_lock_pass_step3">设置复杂密码用于找回</string>
-	<string name="settings_lock_pass_mismatch">密码不匹配！</string>
-	<string name="settings_lock_pass_open">开启锁屏密码</string>
-	<string name="settings_lock_pass_success">设置成功！</string>
-	<string name="settings_need_close_lock_pass">请先清除锁屏密码！</string>
-	<string name="dialog_forget_title">忘记密码</string>
-	<string name="dialog_forget_message">请输入设置锁屏密码时输入的复杂密码</string>
-	<string name="dialog_forget_reset_success">重置成功！</string>
-	<string name="dialog_forget_complex_wrong">密码错误！</string>
-	<string name="switch_lock_title">LiveFACE锁屏</string>
-	<string name="lock_settings_title">锁屏设置</string>
-	<string name="lock_wallpaper_settings_title">锁屏壁纸设置</string>
-	<string name="settings_lock_wallpaper">锁屏壁纸</string>
-	<string name="lock_wallpaper_prefix">锁屏壁纸</string>
-	<string name="lock_wallpaper_pick">从手机存储选择</string>
-	<string name="set_lock_wallpaper_success">设置锁屏壁纸成功，重启桌面后生效。</string>
-	
-	<string name="lock_hint_settings_title">锁屏文字设置</string>
-	<string name="lock_hint_settings_dialog_message">输入您的自定义文字，过长部分可能不显示。</string>
-	<string name="lock_hint_settings_dialog_title">设置锁屏文字</string>
-	
-	<string name="settings_testing_title">实验室功能</string>
-	<string name="settings_testing_upmenu_open">开启上拉菜单</string>
-	
-	<string name="settings_lock_open">开启锁屏</string>
-	
-	<string name="lock_pass_wrong">密码错误</string>
-	<string name="interface_hide_shortcut_title">隐藏应用</string>
-	<string name="hide_shortcut_cancel">取消</string>
-	<string name="hide_shortcut_save">保存</string>
-	<string name="blur">壁纸模糊</string>
-	<string name="button_blur">点击设置壁纸</string>
-	<string name="setting_title">快捷设置</string>
-	<string name="warning">如果设备运行内存低于1GB，我们不建议您开启</string>
-	<string name="guide_button">进入桌面</string>
-	<string name="guide_button1">锁屏兼容</string>
-	<string name="notice1">请将系统锁屏安全改为“无”</string>
+    <string name="lm_sethome_title">设为主屏幕</string>
+    <string name="lm_more_title">更多设置</string>
+    <string name="chooser_ab_downloadmore">主题商店</string>
+    <string name="lm_settings_title">桌面设置</string>
+    <string name="lm_system_settings_title">系统设置</string>
+    <string name="launcher_sethome_success">主屏幕设置成功</string>
+    <string name="notice">如果您要使用LiveFACE锁屏，为确保使用正常，请关闭系统锁屏（屏幕安全 > 锁屏方式 > 无）</string>
+    <string name="noticetitle">兼容性提示</string>
+    <string name="settings_lock_pass">设置锁屏密码</string>
+    <string name="settings_lock_pass_verify">验证现有密码</string>
+    <string name="settings_lock_pass_step1">设置四位数锁屏密码</string>
+    <string name="settings_lock_pass_step2">确认四位数锁屏密码</string>
+    <string name="settings_lock_pass_step3">设置复杂密码用于找回</string>
+    <string name="settings_lock_pass_mismatch">密码不匹配！</string>
+    <string name="settings_lock_pass_open">开启锁屏密码</string>
+    <string name="settings_lock_pass_success">设置成功！</string>
+    <string name="settings_need_close_lock_pass">请先清除锁屏密码！</string>
+    <string name="dialog_forget_title">忘记密码</string>
+    <string name="dialog_forget_message">请输入设置锁屏密码时输入的复杂密码</string>
+    <string name="dialog_forget_reset_success">重置成功！</string>
+    <string name="dialog_forget_complex_wrong">密码错误！</string>
+    <string name="switch_lock_title">LiveFACE锁屏</string>
+    <string name="lock_settings_title">锁屏设置</string>
+    <string name="lock_wallpaper_settings_title">锁屏壁纸设置</string>
+    <string name="settings_lock_wallpaper">锁屏壁纸</string>
+    <string name="lock_wallpaper_prefix">锁屏壁纸</string>
+    <string name="lock_wallpaper_pick">从手机存储选择</string>
+    <string name="set_lock_wallpaper_success">设置锁屏壁纸成功，重启桌面后生效。</string>
 
+    <string name="lock_hint_settings_title">锁屏文字设置</string>
+    <string name="lock_hint_settings_dialog_message">输入您的自定义文字，过长部分可能不显示。</string>
+    <string name="lock_hint_settings_dialog_title">设置锁屏文字</string>
+
+    <string name="settings_testing_title">实验室功能</string>
+    <string name="settings_testing_upmenu_open">开启上拉菜单</string>
+
+    <string name="settings_lock_open">开启锁屏</string>
+
+    <string name="lock_pass_wrong">密码错误</string>
+    <string name="interface_hide_shortcut_title">隐藏应用</string>
+    <string name="hide_shortcut_cancel">取消</string>
+    <string name="hide_shortcut_save">保存</string>
+    <string name="blur">壁纸模糊</string>
+    <string name="button_blur">点击设置壁纸</string>
+    <string name="setting_title">快捷设置</string>
+    <string name="warning">如果设备运行内存低于1GB，我们不建议您开启</string>
+    <string name="guide_button">进入桌面</string>
+    <string name="guide_button1">锁屏兼容</string>
+    <string name="notice1">请将系统锁屏安全改为“无”</string>
+    <string-array name="icon_size_desc">
+        <item>小</item>
+        <item>中</item>
+        <item>大</item>
+    </string-array>
 </resources>
