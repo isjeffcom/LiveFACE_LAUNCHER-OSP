@@ -357,6 +357,9 @@ s -->
     <string name="guide_button">Get Start</string>
     <string name="guide_button1">Compatibility</string>
     <string name="notice1">Turn System ScreenLock Security to "None""</string>
+    <string name="iconSizeSmall">Small</string>
+    <string name="iconSizeMid">Medium</string>
+    <string name="iconSizeLarge">Large</string>
     <string-array name="icon_size_desc">
         <item>Small</item>
         <item>Medium</item>

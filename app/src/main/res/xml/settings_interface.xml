@@ -27,10 +27,10 @@
     </Preference>
 
 
-    <EditTextPreference
+    <!--EditTextPreference
         android:inputType="number"
         android:key="interface_global_font_size"
-        android:title="@string/interface_global_font_size_title" />
+        android:title="@string/interface_global_font_size_title" /-->
 
 
     <ListPreference
@@ -45,12 +45,12 @@
         android:key="interface_homescreen_drawer_enable_drawer"
         android:title="@string/interface_homescreen_drawer_enable_drawer" />
 
-    <ListPreference
+    <!--ListPreference
         android:dialogTitle="@string/interface_hotseat_icon_size_title"
         android:entries="@array/icon_size_desc"
         android:entryValues="@array/icon_size_val"
         android:key="interface_hotseat_icon_size"
-        android:title="@string/interface_hotseat_icon_size_title" />
+        android:title="@string/interface_hotseat_icon_size_title" /-->
 
     <CheckBoxPreference
         android:checked="false"

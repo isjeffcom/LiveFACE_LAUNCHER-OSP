@@ -171,6 +171,9 @@
     <string name="guide_button">进入桌面</string>
     <string name="guide_button1">锁屏兼容</string>
     <string name="notice1">请将系统锁屏安全改为“无”</string>
+    <string name="iconSizeSmall">小</string>
+    <string name="iconSizeMid">中</string>
+    <string name="iconSizeLarge">大</string>
     <string-array name="icon_size_desc">
         <item>小</item>
         <item>中</item>
