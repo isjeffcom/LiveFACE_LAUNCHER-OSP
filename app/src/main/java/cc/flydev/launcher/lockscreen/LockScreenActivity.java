@@ -17,6 +17,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.media.AudioManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -136,11 +137,12 @@ public class LockScreenActivity extends Activity implements OnTouchListener, OnG
 
 		super.onCreate(savedInstanceState);
 		// 去掉标题栏
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		/*requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);*/
 		// 全屏显示
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
 		//添加变量完成滑动操作
 		/////begin
@@ -373,7 +375,11 @@ public class LockScreenActivity extends Activity implements OnTouchListener, OnG
 		iF.addAction("com.samsung.sec.android.MusicPlayer.metachanged");
 		iF.addAction("com.andrew.apollo.metachanged");
 		iF.addAction("com.kugou.android.music.metachanged"); 
-		iF.addAction("com.ting.mp3.playinfo_changed"); 
+		iF.addAction("com.ting.mp3.playinfo_changed");
+		iF.addAction("com.ting.mp3.playinfo_changed");
+		iF.addAction("com.spotify.music.playbackstatechanged");
+		iF.addAction("com.spotify.music.metadatachanged");
+		iF.addAction("com.spotify.music.queuechanged");
 
 		registerReceiver(mMusicInfoReceiver = new MusicInfoReceiver(), iF);
 
