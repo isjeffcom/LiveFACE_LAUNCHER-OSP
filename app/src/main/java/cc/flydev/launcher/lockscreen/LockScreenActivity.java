@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,6 +16,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -127,6 +129,7 @@ public class LockScreenActivity extends Activity implements OnTouchListener, OnG
 
 
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -143,6 +146,12 @@ public class LockScreenActivity extends Activity implements OnTouchListener, OnG
 		// 全屏显示
 		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		//For Set 100% Transparent Status Bar but not perfect here (Work Code)
+		/*super.onAttachedToWindow();
+		setupTransparentSystemBarsForLollipop();*/
+
+
+
 
 		//添加变量完成滑动操作
 		/////begin
@@ -237,6 +246,23 @@ public class LockScreenActivity extends Activity implements OnTouchListener, OnG
 
 		
 	}
+
+	//For Set 100% Transparent Status Bar but not perfect here (Function Code)
+	/*@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	private void setupTransparentSystemBarsForLollipop() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			Window window = getWindow();
+			window.getAttributes().systemUiVisibility |=
+					(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+							| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+							| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+					| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.setStatusBarColor(Color.TRANSPARENT);
+			window.setNavigationBarColor(Color.TRANSPARENT);
+		}
+	}*/
 
 	/**
 	 * 更新相关时间的操作
