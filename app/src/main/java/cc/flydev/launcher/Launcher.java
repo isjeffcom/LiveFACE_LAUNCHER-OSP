@@ -433,11 +433,11 @@ public class Launcher extends Activity
         LauncherAppState.setApplicationContext(getApplicationContext());
         LauncherAppState app = LauncherAppState.getInstance();
 
-        if (LauncherAppState.getInstance().getHideShortCutSharedPrefs().getBoolean("run_guide", true)) {
+        /*if (LauncherAppState.getInstance().getHideShortCutSharedPrefs().getBoolean("run_guide", true)) {
             LauncherAppState.getInstance().getHideShortCutSharedPrefs().edit()
                     .putBoolean("run_guide", false).commit();
             startActivity(new Intent(this, GuideActivity.class));
-        }
+        }*/
 
         // Determine the dynamic grid properties
         Point smallestSize = new Point();

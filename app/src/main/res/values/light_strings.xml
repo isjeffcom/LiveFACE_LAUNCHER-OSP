@@ -10,11 +10,11 @@
     <!-- About -->
     <string name="about_version_title">LiveFACE Version</string>
     <string name="about_developers_title">DEVer</string>
-    <string name="about_developers_summary">Build By Jeff/Imooncat/Ma/Little Pig/Mr.Bo</string>
-    <string name="about_license_title">Open Source License</string>
-    <string name="about_license_summary">Apache License 2.0</string>
-	<string name="about_bbs_title">BBS</string>
-	<string name="about_bbs_summary">http://bbs.flydev.cc</string>
+    <string name="about_developers_summary">Jeff WU / 林紫涵 / 小玛 / 小猪崽 / bo少 / 杨振寰 / 小笨猫 / 云龙</string>
+    <string name="about_license_title">Open Source Site and License</string>
+    <string name="about_license_summary">https://github.com/isjeffcom/LiveFACE_LAUNCHER-OSP / Apache License 2.0</string>
+	<string name="about_bbs_title">Website</string>
+	<string name="about_bbs_summary">http://isliveface.com</string>
     
     <!-- Interface -->
     <string name="interface_icon">Icon</string>
@@ -34,6 +34,6 @@
     <string name="effects_global_auto_rotate_title">Auto Rotate</string>
     
     <!-- Messages -->
-    <string name="message_needs_restart">Needs restarting Launcher to take effect</string>
+    <string name="message_needs_restart">Needs restarting Application to take effect</string>
     
 </resources>

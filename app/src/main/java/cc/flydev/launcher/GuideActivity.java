@@ -1,4 +1,4 @@
-package cc.flydev.launcher;
+/*package cc.flydev.launcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -141,4 +141,4 @@ public class GuideActivity extends Activity implements OnPageChangeListener{
 
 	}
  
-}
+}*/

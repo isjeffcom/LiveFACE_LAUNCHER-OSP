@@ -347,7 +347,7 @@ s -->
     <string name="liveface_debug">APPTEST</string>
     <string name="notice">Before you use LiveFACE LockScreen, please turn-off the system LockScreen service.(System Setting > Screen security > Screen lock > Choose None)</string>
     <string name="noticetitle">Compatibility Notice</string>
-    <string name="interface_hide_shortcut_title">hide_shortcut_title</string>
+    <string name="interface_hide_shortcut_title">Hide APP</string>
     <string name="hide_shortcut_cancel">cancel</string>
     <string name="hide_shortcut_save">save</string>
     <string name="blur">Blur Wallpaper</string>

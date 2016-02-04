@@ -17,7 +17,7 @@
  -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="application_name" msgid="5181331383435256801">"LiveFACE桌面"</string>
+    <string name="application_name" msgid="5181331383435256801">"LiveFACE最美桌面"</string>
     <string name="home" msgid="7658288663002113681">"主屏"</string>
     <string name="uid_name" msgid="7820867637514617527">"LiveFACE"</string>
     <string name="folder_name" msgid="7371454440695724752"></string>
@@ -51,7 +51,7 @@
     <string name="group_shortcuts" msgid="6012256992764410535">"快捷方式"</string>
     <string name="group_widgets" msgid="1569030723286851002">"小部件"</string>
     <string name="group_wallpapers">"壁纸"</string>
-    <string name="completely_out_of_space" msgid="6106288382070760318">"屏幕上没有更多地方放应用了。"</string>
+    <string name="completely_out_of_space" msgid="6106288382070760318">"屏幕上没有更多地方了。"</string>
     <string name="out_of_space" msgid="4691004494942118364">"屏幕上没有空间了。"</string>
     <string name="hotseat_out_of_space" msgid="9139760413395605841">"底部区域没有空间了。"</string>
     <string name="invalid_hotseat_item" msgid="1211534262129849507">"该部件过大，底部区域无法容纳。"</string>
@@ -88,7 +88,7 @@
     <string name="permdesc_write_settings" msgid="5440712911516509985">"允许应用更改主屏幕中的设置和快捷方式。"</string>
     <string name="gadget_error_text" msgid="6081085226050792095">"加载小部件时出现问题"</string>
     <string name="uninstall_system_app_text" msgid="4172046090762920660">"这是系统应用，无法卸载。"</string>
-    <string name="dream_name" msgid="1530253749244328964">"火箭发射器"</string>
+    <string name="dream_name" msgid="1530253749244328964">"LiveFACE"</string>
     <string name="folder_hint_text" msgid="6617836969016293992">"未命名文件夹"</string>
     <string name="workspace_description_format" msgid="2950174241104043327">"主屏幕%1$d"</string>
     <string name="default_scroll_format" msgid="7475544710230993317">"第%1$d页，共%2$d页"</string>
@@ -103,9 +103,9 @@
     <string name="workspace_cling_title" msgid="5626202359865825661">"整理您的空间"</string>
     <string name="workspace_cling_move_item" msgid="528201129978005352">"触摸并按住背景，即可管理壁纸、小部件和桌面设置。"</string>
     <string name="all_apps_cling_title" msgid="34929250753095858">"选择一些应用"</string>
-    <string name="all_apps_cling_add_item" msgid="400866858451850784">"按住一个应用图标，以让它能自由移动。"</string>
-    <string name="folder_cling_title" msgid="3894908818693254164">"看，这是一个文件夹"</string>
-    <string name="folder_cling_create_folder" msgid="6158215559475836131">"要创建一个萌萌哒文件夹，长按某个图标，然后将其移至另一个图标上。"</string>
+    <string name="all_apps_cling_add_item" msgid="400866858451850784">"按住一个应用图标，它能自由移动。"</string>
+    <string name="folder_cling_title" msgid="3894908818693254164">"这是一个文件夹"</string>
+    <string name="folder_cling_create_folder" msgid="6158215559475836131">"这样可以创建一个文件夹，长按某个图标，然后移至另一个图标之上。"</string>
     <string name="cling_dismiss" msgid="8962359497601507581">"确定"</string>
     <string name="folder_opened" msgid="94695026776264709">"文件夹已打开，大小为<xliff:g id="WIDTH">%1$d</xliff:g>×<xliff:g id="HEIGHT">%2$d</xliff:g>"</string>
     <string name="folder_tap_to_close" msgid="1884479294466410023">"触摸可关闭文件夹"</string>
@@ -124,7 +124,7 @@
     <string name="about_title3">/@Root_Feng</string>
     <string name="lm_sethome_title">设为主屏幕</string>
     <string name="lm_more_title">更多设置</string>
-    <string name="chooser_ab_downloadmore">主题商店</string>
+    <string name="chooser_ab_downloadmore">主题商店(Google Play)</string>
     <string name="lm_settings_title">桌面设置</string>
     <string name="lm_system_settings_title">系统设置</string>
     <string name="launcher_sethome_success">主屏幕设置成功</string>
@@ -135,12 +135,12 @@
     <string name="settings_lock_pass_step1">设置四位数锁屏密码</string>
     <string name="settings_lock_pass_step2">确认四位数锁屏密码</string>
     <string name="settings_lock_pass_step3">设置复杂密码用于找回</string>
-    <string name="settings_lock_pass_mismatch">密码不匹配！</string>
+    <string name="settings_lock_pass_mismatch">第二次输入的密码与第一次不匹配！</string>
     <string name="settings_lock_pass_open">开启锁屏密码</string>
     <string name="settings_lock_pass_success">设置成功！</string>
     <string name="settings_need_close_lock_pass">请先清除锁屏密码！</string>
     <string name="dialog_forget_title">忘记密码</string>
-    <string name="dialog_forget_message">请输入设置锁屏密码时输入的复杂密码</string>
+    <string name="dialog_forget_message">请输入忘记密码时恢复的复杂密码</string>
     <string name="dialog_forget_reset_success">重置成功！</string>
     <string name="dialog_forget_complex_wrong">密码错误！</string>
     <string name="switch_lock_title">LiveFACE锁屏</string>
@@ -149,10 +149,10 @@
     <string name="settings_lock_wallpaper">锁屏壁纸</string>
     <string name="lock_wallpaper_prefix">锁屏壁纸</string>
     <string name="lock_wallpaper_pick">从手机存储选择</string>
-    <string name="set_lock_wallpaper_success">设置锁屏壁纸成功，重启桌面后生效。</string>
+    <string name="set_lock_wallpaper_success">设置锁屏壁纸成功</string>
 
     <string name="lock_hint_settings_title">锁屏文字设置</string>
-    <string name="lock_hint_settings_dialog_message">输入您的自定义文字，过长部分可能不显示。</string>
+    <string name="lock_hint_settings_dialog_message">输入您的自定义文字，过长可能部分不显示。</string>
     <string name="lock_hint_settings_dialog_title">设置锁屏文字</string>
 
     <string name="settings_testing_title">实验室功能</string>
@@ -167,7 +167,7 @@
     <string name="blur">壁纸模糊</string>
     <string name="button_blur">点击设置壁纸</string>
     <string name="setting_title">快捷设置</string>
-    <string name="warning">如果设备运行内存低于1GB，我们不建议您开启</string>
+    <string name="warning">不建议在运行内存低于1GB的设备上使用</string>
     <string name="guide_button">进入桌面</string>
     <string name="guide_button1">锁屏兼容</string>
     <string name="notice1">请将系统锁屏安全改为“无”</string>

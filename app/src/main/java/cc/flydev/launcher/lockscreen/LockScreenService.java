@@ -28,12 +28,12 @@ public class LockScreenService extends Service {
 	public void onCreate() {
 		super.onCreate();
 		if(!SettingsProvider.getBoolean(this, "settings_lock_open", false)) {
-			System.out.println("return1()...........");
+			//System.out.println("return1()...........");
 			//stopSelf() method cause a large CPU usage ! NEED ATTENTION ! fix later;
 			return;
 		}
 		if(SettingsProvider.getBoolean(this, "settings_lock_open", true)){
-		System.out.println("onCreate()................");
+		//System.out.println("onCreate()................");
 		startIntent = new Intent(LockScreenService.this, LockScreenActivity.class);
 		startIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -57,19 +57,19 @@ public class LockScreenService extends Service {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		System.out.println("onDestroy()...........");
+		//System.out.println("onDestroy()...........");
 
 		if(!SettingsProvider.getBoolean(this, "settings_lock_open", false)) {
-			System.out.println("return2()...........");
+			//System.out.println("return2()...........");
 			unregisterReceiver(MyLockScreenReceiver);
-			System.out.println("unregisterReceiver in return2()...........");
+			//System.out.println("unregisterReceiver in return2()...........");
 			return;
 
 		}
 		if(!SettingsProvider.getBoolean(this, "settings_lock_open", true)){
 			// 注销
 			unregisterReceiver(MyLockScreenReceiver);
-			System.out.println("unregisterReceiver()...........");
+			//System.out.println("unregisterReceiver()...........");
 			// 再次启动服务
 			startService(new Intent(LockScreenService.this, LockScreenService.class));
 		}
