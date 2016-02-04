@@ -41,7 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "I recommend an excited APP: LiveFACE");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.recommend).toString());
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }

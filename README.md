@@ -17,7 +17,7 @@ Product Manager：吴健锋
 
 User Interface：吴健锋 
 
-Developer：林紫涵，小猪崽，bo少，杨振寰，吴健锋
+Developer：林紫涵，小猪崽，bo少，杨振寰，吴健锋，君剑
 
 Widget Developer：小玛 
 
@@ -25,9 +25,9 @@ Widget Developer：小玛
 
 Intro： 
 
-This is an Android Studio Project and code started change to kotlin.
+This is an Android Luancher project with LiveFACE iconpack and a serious function.
 
-本项目为Android Studio项目，代码将逐渐转为kotlin
+Tools: Android Studio
 
 ---------------
 
@@ -47,10 +47,14 @@ Any reproduction, dissemination, transmission, forwarding, and publishing or dis
 
 ---------------
 
+Website (Unfinish): http://isliveface.com
+
 Google Play：https://play.google.com/store/apps/details?id=cc.flydev.face
 <<<<<<< HEAD
 
 //OSC git For Chinese Dever:
 http://git.oschina.net/liveface/LiveFACE_LAUNCHER-OSP
+
+
 =======
 >>>>>>> 87a49cd2335e8aa7a4c0574c8a1f02392fff16ef

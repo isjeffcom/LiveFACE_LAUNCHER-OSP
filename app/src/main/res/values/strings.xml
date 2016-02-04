@@ -301,7 +301,7 @@ s -->
     <string name="about_title3">FROOT</string>
 
     <!-- Theme Chooser -->
-    <string name="chooser_ab_downloadmore">Theme Store</string>
+    <string name="chooser_ab_downloadmore">Theme in Google Play</string>
 
     <string name="lm_sethome_title">Set as main screen</string>
     <string name="lm_more_title">More Settings</string>
@@ -309,21 +309,21 @@ s -->
     <string name="lm_system_settings_title">System Settings</string>
     <string name="launcher_sethome_success">Main Screen Lock</string>
 
-    <string name="lock_settings_title">LockScreen Settings</string>
+    <string name="lock_settings_title">LockScreen</string>
     <string name="lock_wallpaper_settings_title">LockScreen Wallpaper Settings</string>
     <string name="settings_lock_wallpaper">LockScreen Wallpaper</string>
     <string name="lock_wallpaper_prefix">LockScreen Wallpaper</string>
     <string name="lock_wallpaper_pick">Choose From Gallery</string>
     <string name="set_lock_wallpaper_success">Reset Wallpaper Successful. </string>
 
-    <string name="lock_hint_settings_title">LockScreen Textview Settings</string>
+    <string name="lock_hint_settings_title">LockScreen Text Settings</string>
     <string name="lock_hint_settings_dialog_message">Those word are too long that you couldn\'t see them all</string>
-    <string name="lock_hint_settings_dialog_title">Set the Textview on LockScreen</string>
+    <string name="lock_hint_settings_dialog_title">Set the Text on LockScreen</string>
 
-    <string name="settings_testing_title">Lab Function</string>
-    <string name="settings_testing_upmenu_open">UpMenu</string>
+    <string name="settings_testing_title">Lab</string>
+    <string name="settings_testing_upmenu_open">Control Center (Up Menu)</string>
 
-    <string name="settings_lock_open">LockScreen Security</string>
+    <string name="settings_lock_open">LockScreen</string>
 
     <string name="lock_pass_wrong">ERROR PASSWORD</string>
 
@@ -331,10 +331,10 @@ s -->
     <string name="settings_lock_pass_verify">Confirm your PIN</string>
     <string name="settings_lock_pass_step1">Set Your PIN</string>
     <string name="settings_lock_pass_step2">Confirm your PIN</string>
-    <string name="settings_lock_pass_step3">Set a Password for Unlock (when you forget)</string>
+    <string name="settings_lock_pass_step3">Set PIN</string>
     <string name="settings_lock_pass_mismatch">ERROR PASSWORD</string>
-    <string name="settings_lock_pass_open">Screen Security</string>
-    <string name="settings_lock_pass_success">Successful !</string>
+    <string name="settings_lock_pass_open">LockScreen PIN</string>
+    <string name="settings_lock_pass_success">Successful </string>
     <string name="settings_need_close_lock_pass">Please clean the password first.</string>
 
     <string name="dialog_forget_title">Forget PIN</string>
@@ -345,18 +345,19 @@ s -->
     <string name="switch_lock_title">LiveFACE LockScreen</string>
 
     <string name="liveface_debug">APPTEST</string>
-    <string name="notice">If you want used LiveFACE Lockscreen service, please turn-off the system lockscreen.(Screen security > Screen lock > Choose None)</string>
+    <string name="notice">Before you use LiveFACE LockScreen, please turn-off the system LockScreen service.(System Setting > Screen security > Screen lock > Choose None)</string>
     <string name="noticetitle">Compatibility Notice</string>
     <string name="interface_hide_shortcut_title">hide_shortcut_title</string>
     <string name="hide_shortcut_cancel">cancel</string>
     <string name="hide_shortcut_save">save</string>
-    <string name="blur">blur wallpaper</string>
+    <string name="blur">Blur Wallpaper</string>
     <string name="button_blur">click set wallpaper</string>
     <string name="setting_title">QuickSettings</string>
     <string name="warning">If you device RAM less than 1GB, do not use it for stable.</string>
     <string name="guide_button">Get Start</string>
     <string name="guide_button1">Compatibility</string>
     <string name="notice1">Turn System ScreenLock Security to "None""</string>
+    <string name="recommend">I strongly recommend an Android App for you: LiveFACE LAUNCHER. Find More: http://isliveface.com . Get it on Google Play: https://play.google.com/store/apps/details?id=cc.flydev.face</string>
     <string name="iconSizeSmall">Small</string>
     <string name="iconSizeMid">Medium</string>
     <string name="iconSizeLarge">Large</string>

@@ -62,7 +62,7 @@ public class IconPackChooserActivity extends AppCompatActivity implements OnItem
                 finish();
                 break;
             case R.id.iconpack_downloadmore :
-                Uri down = Uri.parse("http://www.coolapk.com/apk/tag/%E5%9B%BE%E6%A0%87/");
+                Uri down = Uri.parse("https://play.google.com/store/search?q=iconpacks&c=apps");
                 Intent i = new Intent();
                 i.setAction("android.intent.action.VIEW");
                 i.setData(down);
