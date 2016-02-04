@@ -2854,7 +2854,8 @@ public class Launcher extends Activity
     }
 
     private void setWorkspaceBackground(boolean workspace) {
-        mLauncherView.setBackground(workspace ? mWorkspaceBackgroundDrawable : null);
+        //去除桌面上下阴影
+//        mLauncherView.setBackground(workspace ? mWorkspaceBackgroundDrawable : null);
     }
 
     void updateWallpaperVisibility(boolean visible) {

@@ -22,8 +22,8 @@
 
     android:id="@+id/launcher"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/workspace_bg">
+    android:layout_height="match_parent">
+    <!--android:background="@drawable/workspace_bg"-->
 
     <cc.flydev.launcher.DragLayer
         android:id="@+id/drag_layer"
