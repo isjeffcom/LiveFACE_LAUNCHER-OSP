@@ -78,18 +78,18 @@ public class LockSettingActivity extends AbstractBarPreferenceActivity {
 
                 final SharedPreferences msp = getSharedPreferences("LockScreen", Context.MODE_PRIVATE);
 
-                hint.setText(msp.getString("lock_hint", "我是自定义文字"));
+                hint.setText(msp.getString("lock_hint", "Customize text"));
 
                 new AlertDialog.Builder(getActivity())
                         .setTitle(R.string.lock_hint_settings_dialog_title)
                         .setView(dialogView)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(R.string.btnYes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 msp.edit().putString("lock_hint", hint.getText().toString()).commit();
                             }
                         })
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.btnNo, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface p1, int p2) {
                                 //close
@@ -111,6 +111,7 @@ public class LockSettingActivity extends AbstractBarPreferenceActivity {
                 if (SettingsProvider.getBoolean(getActivity(), lock_pass_open, false)) {
                     Toast.makeText(getActivity(), R.string.settings_need_close_lock_pass, 1000).show();
                     ret = false;
+
                 } else {
                     SettingsProvider.putBoolean(getActivity(), lock_open, (Boolean) newValue);
                     ret = true;

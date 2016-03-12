@@ -361,6 +361,8 @@ s -->
     <string name="iconSizeSmall">Small</string>
     <string name="iconSizeMid">Medium</string>
     <string name="iconSizeLarge">Large</string>
+    <string name="btnYes">Confirm</string>
+    <string name="btnNo">Cancel</string>
     <string-array name="icon_size_desc">
         <item>Small</item>
         <item>Medium</item>

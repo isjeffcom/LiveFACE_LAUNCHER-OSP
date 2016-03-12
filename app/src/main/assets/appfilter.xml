@@ -447,4 +447,9 @@
 	<item component="ComponentInfo{com.wuba}" drawable="app_58"/>
 	<item component="ComponentInfo{com.baidu.homework}" drawable="app_zuoyebang"/>
 	<item component="ComponentInfo{com.kibey.echo}" drawable="app_echo"/>
+    <item component="ComponentInfo{com.gotokeep.keep}" drawable="app_keep"/>
+    <item component="ComponentInfo{com.sina.news}" drawable="app_sinanews"/>
+    <item component="ComponentInfo{com.tongcheng.android}" drawable="app_tongcheng"/>
+    <item component="ComponentInfo{com.hungryhouse}" drawable="app_hungryhouse"/>
+    <item component="ComponentInfo{com.justeat.app.uk}" drawable="app_justeat"/>
 </resources>

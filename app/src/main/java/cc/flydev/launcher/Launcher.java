@@ -218,8 +218,8 @@ public class Launcher extends Activity
     private AnimatorSet mStateAnimation;
 
     static final int APPWIDGET_HOST_ID = 1024;
-    private static final int EXIT_SPRINGLOADED_MODE_SHORT_TIMEOUT = 300;
-    private static final int EXIT_SPRINGLOADED_MODE_LONG_TIMEOUT = 600;
+    private static final int EXIT_SPRINGLOADED_MODE_SHORT_TIMEOUT = 0;
+    private static final int EXIT_SPRINGLOADED_MODE_LONG_TIMEOUT = 0;
     private static final int SHOW_CLING_DURATION = 150;
     private static final int DISMISS_CLING_DURATION = 150;
 
@@ -228,9 +228,9 @@ public class Launcher extends Activity
 
     // How long to wait before the new-shortcut animation automatically pans the
     // workspace
-    private static int NEW_APPS_PAGE_MOVE_DELAY = 500;
+    private static int NEW_APPS_PAGE_MOVE_DELAY = 300;
     private static int NEW_APPS_ANIMATION_INACTIVE_TIMEOUT_SECONDS = 5;
-    private static int NEW_APPS_ANIMATION_DELAY = 500;
+    private static int NEW_APPS_ANIMATION_DELAY = 300;
 
     private final BroadcastReceiver mCloseSystemDialogsReceiver = new CloseSystemDialogsIntentReceiver();
     private final ContentObserver mWidgetObserver = new AppWidgetResetObserver();

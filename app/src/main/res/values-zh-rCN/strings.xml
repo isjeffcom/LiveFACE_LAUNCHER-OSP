@@ -130,7 +130,7 @@
     <string name="launcher_sethome_success">主屏幕设置成功</string>
     <string name="notice">如果您要使用LiveFACE锁屏，为确保使用正常，请关闭系统锁屏（屏幕安全 > 锁屏方式 > 无）</string>
     <string name="noticetitle">兼容性提示</string>
-    <string name="settings_lock_pass">设置锁屏密码</string>
+    <string name="settings_lock_pass">管理锁屏密码</string>
     <string name="settings_lock_pass_verify">验证现有密码</string>
     <string name="settings_lock_pass_step1">设置四位数锁屏密码</string>
     <string name="settings_lock_pass_step2">确认四位数锁屏密码</string>
@@ -138,7 +138,7 @@
     <string name="settings_lock_pass_mismatch">第二次输入的密码与第一次不匹配！</string>
     <string name="settings_lock_pass_open">开启锁屏密码</string>
     <string name="settings_lock_pass_success">设置成功！</string>
-    <string name="settings_need_close_lock_pass">请先清除锁屏密码！</string>
+    <string name="settings_need_close_lock_pass">请先进入密码管理清除锁屏密码！</string>
     <string name="dialog_forget_title">忘记密码</string>
     <string name="dialog_forget_message">请输入忘记密码时恢复的复杂密码</string>
     <string name="dialog_forget_reset_success">重置成功！</string>
@@ -175,6 +175,8 @@
     <string name="iconSizeSmall">小</string>
     <string name="iconSizeMid">中</string>
     <string name="iconSizeLarge">大</string>
+    <string name="btnYes">确定</string>
+    <string name="btnNo">取消</string>
     <string-array name="icon_size_desc">
         <item>小</item>
         <item>中</item>
