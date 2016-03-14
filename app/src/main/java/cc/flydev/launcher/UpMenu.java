@@ -79,7 +79,7 @@ public class UpMenu extends Activity implements OnClickListener, OnTouchListener
 	private ContentResolver cr;
 	private Camera camera;
 
-	private RelativeLayout upMenuBkg;
+	private LinearLayout upMenuBkg;
 	
 	private WindowManager mWM;
 	private WindowManager.LayoutParams mTouch;
@@ -262,7 +262,7 @@ public class UpMenu extends Activity implements OnClickListener, OnTouchListener
 			e.printStackTrace();
 		}
 
-		upMenuBkg = (RelativeLayout) findViewById(R.id.up_menu_bkg);
+		upMenuBkg = (LinearLayout) findViewById(R.id.up_menu_bkg);
 		
 		
 	}

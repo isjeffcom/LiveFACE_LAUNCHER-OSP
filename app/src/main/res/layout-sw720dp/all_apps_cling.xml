@@ -15,7 +15,7 @@
 -->
 <cc.flydev.launcher.Cling
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto/cc.flydev.launcher"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
     launcher:drawIdentifier="all_apps_large">
     <FrameLayout
         android:layout_width="match_parent"

@@ -16,7 +16,7 @@
 
 <cc.flydev.launcher.PagedViewIcon
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto/cc.flydev.launcher"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
 
     style="@style/WorkspaceIcon.AppsCustomize"
 

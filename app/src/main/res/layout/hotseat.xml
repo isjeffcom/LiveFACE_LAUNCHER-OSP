@@ -15,7 +15,7 @@
 -->
 <cc.flydev.launcher.Hotseat
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto/cc.flydev.launcher">
+    xmlns:launcher="http://schemas.android.com/apk/res-auto">
     <cc.flydev.launcher.CellLayout
         android:id="@+id/layout"
         android:layout_width="wrap_content"

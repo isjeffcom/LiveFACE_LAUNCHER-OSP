@@ -15,7 +15,7 @@
 -->
 <cc.flydev.launcher.PageIndicator
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto/cc.flydev.launcher"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
     android:animateLayoutChanges="true"
     launcher:windowSize="@integer/config_maxNumberOfPageIndicatorsToShow">
 </cc.flydev.launcher.PageIndicator>
