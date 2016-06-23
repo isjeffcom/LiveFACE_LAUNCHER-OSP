@@ -82,17 +82,14 @@ public class SetLockWallpaperActivity extends AppCompatActivity implements OnIte
 		layoutParamsGrid.addRule(RelativeLayout.ABOVE, R.id.pick_wallpaper);
 		mGridView.setLayoutParams(layoutParamsGrid);
 		Button btn = (Button) v.findViewById(R.id.lock_wallpaper_more_button);
-		btn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Intent intent = new Intent();
-				intent.setAction(Intent.ACTION_PICK);
-				intent.setDataAndType(
-						MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-						"image/*");
-				startActivityForResult(intent, 0);
-			}
-		});
+		btn.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_PICK);
+            intent.setDataAndType(
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    "image/*");
+            startActivityForResult(intent, 0);
+        });
 
 	}
 

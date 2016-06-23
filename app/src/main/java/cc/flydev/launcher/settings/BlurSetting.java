@@ -125,7 +125,6 @@ public class BlurSetting extends AppCompatActivity {
                 mWallpaperManager.setBitmap(_stackBlurManager.returnBlurredImage());
 
             } catch (IOException e) {
-                ;
                 e.printStackTrace();
             }
             finish();

@@ -53,7 +53,7 @@ public class DragLayer extends FrameLayout implements ViewGroup.OnHierarchyChang
 
     // Variables relating to resizing widgets
     private final ArrayList<AppWidgetResizeFrame> mResizeFrames =
-            new ArrayList<AppWidgetResizeFrame>();
+            new ArrayList<>();
     private AppWidgetResizeFrame mCurrentResizeFrame;
 
     // Variables relating to animation of views after drop

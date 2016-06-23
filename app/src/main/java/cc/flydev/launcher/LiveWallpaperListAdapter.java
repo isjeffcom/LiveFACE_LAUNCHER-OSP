@@ -43,6 +43,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+
 import cc.flydev.face.R;
 
 public class LiveWallpaperListAdapter extends BaseAdapter implements ListAdapter {
@@ -114,10 +115,12 @@ public class LiveWallpaperListAdapter extends BaseAdapter implements ListAdapter
     public static class LiveWallpaperTile extends WallpaperPickerActivity.WallpaperTileInfo {
         private Drawable mThumbnail;
         private WallpaperInfo mInfo;
+
         public LiveWallpaperTile(Drawable thumbnail, WallpaperInfo info, Intent intent) {
             mThumbnail = thumbnail;
             mInfo = info;
         }
+
         @Override
         public void onClick(WallpaperPickerActivity a) {
             Intent preview = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
@@ -185,13 +188,14 @@ public class LiveWallpaperListAdapter extends BaseAdapter implements ListAdapter
         }
 
         @Override
-        protected void onProgressUpdate(LiveWallpaperTile...infos) {
+        protected void onProgressUpdate(LiveWallpaperTile... infos) {
             for (LiveWallpaperTile info : infos) {
                 if (info == null) {
                     LiveWallpaperListAdapter.this.notifyDataSetChanged();
                     break;
                 }
-//                info.mThumbnail.setDither(true);
+                if (info.mThumbnail != null)
+                    info.mThumbnail.setDither(true);
                 if (mWallpaperPosition < mWallpapers.size()) {
                     mWallpapers.set(mWallpaperPosition, info);
                 } else {

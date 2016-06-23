@@ -33,7 +33,7 @@ import android.util.Pair;
  * This class is fifo.
  */
 public class DeferredHandler {
-    private LinkedList<Pair<Runnable, Integer>> mQueue = new LinkedList<Pair<Runnable, Integer>>();
+    private LinkedList<Pair<Runnable, Integer>> mQueue = new LinkedList<>();
     private MessageQueue mMessageQueue = Looper.myQueue();
     private Impl mHandler = new Impl();
 
@@ -81,7 +81,7 @@ public class DeferredHandler {
     }
     public void post(Runnable runnable, int type) {
         synchronized (mQueue) {
-            mQueue.add(new Pair<Runnable, Integer>(runnable, type));
+            mQueue.add(new Pair<>(runnable, type));
             if (mQueue.size() == 1) {
                 scheduleNextLocked();
             }

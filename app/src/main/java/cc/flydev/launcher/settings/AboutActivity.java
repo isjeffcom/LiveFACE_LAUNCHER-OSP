@@ -35,7 +35,7 @@ public class AboutActivity extends AbstractBarPreferenceActivity {
         super.onResume();
     }
 
-    public class AboutFragment extends PreferenceFragment {
+    class AboutFragment extends PreferenceFragment {
         private final String KEY_VERSION = "about_version";
 
         @Override

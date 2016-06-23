@@ -130,9 +130,9 @@ public class CellLayout extends ViewGroup {
     private BubbleTextView mPressedOrFocusedIcon;
 
     private HashMap<LayoutParams, Animator> mReorderAnimators = new
-            HashMap<LayoutParams, Animator>();
+            HashMap<>();
     private HashMap<View, ReorderHintAnimation>
-            mShakeAnimators = new HashMap<View, ReorderHintAnimation>();
+            mShakeAnimators = new HashMap<>();
 
     private boolean mItemPlacementDirty = false;
 
@@ -347,7 +347,7 @@ public class CellLayout extends ViewGroup {
         }
 
         r *= FOREGROUND_ALPHA_DAMPER;
-        mForegroundAlpha = (int) Math.round((r * 255));
+        mForegroundAlpha = Math.round((r * 255));
         mOverScrollForegroundDrawable.setAlpha(mForegroundAlpha);
         invalidate();
     }
