@@ -47,6 +47,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Pair;
 import android.view.ActionMode;
@@ -370,6 +371,8 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         // Show the custom action bar view
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setCustomView(R.layout.actionbar_set_wallpaper);
+        actionBar.setDisplayShowCustomEnabled(true);
+        ((Toolbar)actionBar.getCustomView().getParent()).setContentInsetsAbsolute(0,0);
         actionBar.getCustomView().setOnClickListener(
                 new OnClickListener() {
                     @Override
