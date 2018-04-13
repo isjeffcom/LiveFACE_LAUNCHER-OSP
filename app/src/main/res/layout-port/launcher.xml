@@ -15,10 +15,13 @@
 -->
 
 <!-- Full screen view projects under the status bar and contains the background -->
-<FrameLayout
-
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="68dp"
+    sothree:umanoShadowHeight="4dp"
 
     android:id="@+id/launcher"
     android:layout_width="match_parent"
@@ -104,4 +107,13 @@
             android:layout_height="match_parent"
             android:visibility="invisible" />
     </cc.flydev.launcher.DragLayer>
-</FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:text="LiveFACE HUB"
+        android:textSize="24sp"
+        android:textColor="#3b97ff"
+        android:background="#282828"/>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

@@ -85,7 +85,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
-    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!--uses-permission android:name="android.permission.READ_LOGS" /-->
 
 
     <application
@@ -97,7 +97,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
+        <!--activity
             android:name="cc.flydev.launcher.SwitchLockActivity"
             android:clearTaskOnLaunch="true"
             android:launchMode="singleTask"
@@ -119,7 +119,7 @@
                 </intent-filter>
 
             </intent-filter>
-        </activity>
+        </activity-->
 
         <activity
             android:name="cc.flydev.launcher.Launcher"
